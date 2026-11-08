@@ -185,6 +185,10 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .cinfo .k{font-size:13px;color:var(--gray);flex:0 0 74px;letter-spacing:.08em}
 .cinfo .v{font-size:14.5px;font-weight:600}
 .cinfo .v span{display:block;font-weight:400;font-size:12.5px;color:var(--gray);margin-top:3px}
+.wx{display:flex;align-items:center;gap:20px;margin-top:22px;padding:18px 20px;background:#fff;border:1px solid var(--line)}
+.wx img{width:140px;height:140px;flex:0 0 140px;image-rendering:pixelated}
+.wx b{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.wx span{font-size:12.5px;color:var(--gray);line-height:1.85}
 .form{background:#fff;border:1px solid var(--line);padding:32px}
 .form h3{font-size:17px;font-weight:800;margin-bottom:6px}
 .form .sm{font-size:12.5px;color:var(--gray);margin-bottom:22px}
@@ -588,6 +592,14 @@ footer{background:#1C1917;color:#B8B2AC}
         <div class="row"><div class="k">商务邮箱</div><div class="v">business@yuhuolingkong.com<span>方案、报价与资料索取</span></div></div>
         <div class="row"><div class="k">公司地址</div><div class="v">四川省成都市龙泉驿区柏合街道合纵路 266 号<span>成航大厦 2 楼 B2-1</span></div></div>
         <div class="row"><div class="k">来访预约</div><div class="v">可预约参观样机与试飞<span>请提前两个工作日联系</span></div></div>
+
+        <div class="wx">
+          <img src="assets/wechat-qr.png" alt="微信咨询二维码">
+          <div>
+            <b>微信咨询</b>
+            <span>扫码添加王天一<br>备注「单位 + 场景」，对接更快</span>
+          </div>
+        </div>
       </div>
 
       <form class="form rv d1" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='已收到，我们会尽快联系您';">
