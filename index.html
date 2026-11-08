@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成都御火凌空航空科技有限公司 —— 可回收灭火巡飞器</title>
+<meta name="description" content="成都御火凌空航空科技有限公司专注可回收灭火巡飞器研发与场景化应用：3 分钟抵达火场，30 公里作战半径，12–120 架集群作战。">
+<style>
+:root{
+  --red:#C8141F; --red-d:#A20E16; --red-l:#E8402F;
+  --ink:#1F1B18; --ink-2:#3A3430; --gray:#6E6862; --gray-l:#9A948D;
+  --line:#E7E3DC; --bg:#fff; --bg2:#F7F5F2;
+  --shell:1200px;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+li{list-style:none}
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 24px}
+
+/* ---------- 顶部信息条 ---------- */
+.topbar{background:var(--red);color:#fff;font-size:12.5px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar .l{display:flex;gap:22px;opacity:.92}
+.topbar .r{display:flex;gap:18px;opacity:.9}
+.topbar a:hover{text-decoration:underline}
+
+/* ---------- 头部 ---------- */
+header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s}
+header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:82px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.logo img{height:38px;width:auto;flex:0 0 auto}
+.logo .tx b{display:block;font-size:19px;letter-spacing:.1em;font-weight:800;line-height:1.15;color:var(--ink)}
+.logo .tx span{display:block;font-size:8.5px;letter-spacing:.28em;color:var(--gray-l);margin-top:3px}
+.nav{display:flex;align-items:center;gap:4px}
+.nav>li>a{
+  display:block;padding:0 16px;line-height:82px;font-size:15px;color:var(--ink-2);
+  position:relative;transition:color .25s;
+}
+.nav>li>a::after{content:"";position:absolute;left:16px;right:16px;bottom:22px;height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s}
+.nav>li>a:hover,.nav>li.on>a{color:var(--red)}
+.nav>li>a:hover::after,.nav>li.on>a::after{transform:scaleX(1)}
+.hd-tel{display:flex;align-items:center;gap:10px;color:var(--red);font-weight:800;font-size:19px;letter-spacing:.02em}
+.hd-tel small{display:block;font-size:10px;color:var(--gray);font-weight:400;letter-spacing:.1em;margin-bottom:-3px}
+.burger{display:none;width:26px;height:18px;position:relative;background:none;border:0;cursor:pointer}
+.burger i{position:absolute;left:0;width:100%;height:2px;background:var(--ink);transition:.3s}
+.burger i:nth-child(1){top:0}.burger i:nth-child(2){top:8px}.burger i:nth-child(3){top:16px}
+
+/* ---------- 轮播 ---------- */
+.hero{position:relative;height:clamp(420px,52vw,620px);overflow:hidden;background:#111}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;pointer-events:none}
+.slide.on{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s linear}
+.slide.on img{transform:scale(1)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,8,8,.92) 0%,rgba(12,8,8,.74) 40%,rgba(12,8,8,.28) 74%,rgba(12,8,8,.12) 100%)}
+.slide .cap{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:2;color:#fff}
+.slide .cap .wrap{max-width:var(--shell)}
+.slide .en{font-size:12px;letter-spacing:.34em;opacity:.6;margin-bottom:16px;text-transform:uppercase}
+.slide h1{font-size:clamp(28px,3.6vw,50px);line-height:1.24;font-weight:800;letter-spacing:.01em;max-width:760px}
+.slide h1 em{font-style:normal;color:#FFCBBD}
+.slide p{margin-top:18px;font-size:clamp(14px,1.2vw,16.5px);line-height:1.9;opacity:.88;max-width:560px}
+.slide .btns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 30px;font-size:15px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.28s;font-family:inherit}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.dots button{width:30px;height:3px;background:rgba(255,255,255,.4);border:0;cursor:pointer;padding:0;transition:.3s}
+.dots button.on{background:#fff;width:44px}
+.arrow{
+  position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;z-index:3;
+  background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.28);color:#fff;cursor:pointer;
+  display:grid;place-items:center;transition:.3s;opacity:0;
+}
+.hero:hover .arrow{opacity:1}
+.arrow:hover{background:var(--red);border-color:var(--red)}
+.arrow.prev{left:24px}.arrow.next{right:24px}
+
+/* ---------- 通用 section ---------- */
+.sec{padding:76px 0}
+.sec.gray{background:var(--bg2)}
+.sec-hd{text-align:center;margin-bottom:52px}
+.sec-hd h2{font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:.02em;color:var(--ink)}
+.sec-hd h2 em{font-style:normal;color:var(--red)}
+.sec-hd .line{width:38px;height:3px;background:var(--red);margin:16px auto 0}
+.sec-hd p{color:var(--gray);font-size:14.5px;margin-top:14px}
+
+/* ---------- 四宫格优势 ---------- */
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.adv .item{text-align:center;padding:34px 22px 30px;background:#fff;border:1px solid var(--line);transition:.35s}
+.adv .item:hover{border-color:rgba(200,20,31,.35);box-shadow:0 14px 34px -22px rgba(0,0,0,.4);transform:translateY(-4px)}
+.adv .ico{
+  width:74px;height:74px;margin:0 auto 20px;border-radius:50%;
+  border:1px solid rgba(200,20,31,.3);display:grid;place-items:center;color:var(--red);
+  background:rgba(200,20,31,.045);transition:.35s;
+}
+.adv .item:hover .ico{background:var(--red);color:#fff;border-color:var(--red)}
+.adv h3{font-size:17px;font-weight:700;margin-bottom:10px}
+.adv p{font-size:13px;color:var(--gray);line-height:1.9}
+
+/* ---------- 数据条 ---------- */
+.stats{background:var(--red);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding:34px 20px;text-align:center;border-left:1px solid rgba(255,255,255,.18)}
+.stats div:first-child{border-left:0}
+.stats .n{font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1;letter-spacing:.01em}
+.stats .n small{font-size:.42em;font-weight:500;margin-left:4px;opacity:.85}
+.stats .t{font-size:13px;opacity:.82;margin-top:10px}
+
+/* ---------- 试点单位 ---------- */
+.partners{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.partners .p{
+  border:1px solid var(--line);background:#fff;padding:26px 20px;text-align:center;
+  font-size:14px;color:var(--ink-2);line-height:1.7;transition:.3s;
+}
+.partners .p:hover{border-color:var(--red);color:var(--red)}
+.partners .p small{display:block;font-size:11.5px;color:var(--gray-l);margin-top:7px;letter-spacing:.06em}
+
+/* ---------- 产品中心 ---------- */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod{background:#fff;border:1px solid var(--line);overflow:hidden;transition:.35s}
+.prod:hover{box-shadow:0 20px 44px -26px rgba(0,0,0,.45);transform:translateY(-5px)}
+.prod .im{overflow:hidden;aspect-ratio:4/3;background:#eee}
+.prod .im img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.prod:hover .im img{transform:scale(1.06)}
+.prod .tx{padding:22px 22px 24px}
+.prod h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.prod p{font-size:13px;color:var(--gray);line-height:1.85;min-height:48px}
+.prod .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;color:var(--red);font-weight:600}
+.prod .more i{font-style:normal;transition:transform .3s}
+.prod:hover .more i{transform:translateX(5px)}
+
+/* ---------- 技术 ---------- */
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.tech .t{padding:34px 30px 34px 0;border-right:1px solid var(--line);position:relative}
+.tech .t:last-child{border-right:0;padding-right:0}
+.tech .t:not(:first-child){padding-left:30px}
+.tech .no{font-size:12px;letter-spacing:.2em;color:var(--red);font-weight:700;margin-bottom:14px}
+.tech h3{font-size:19px;font-weight:800;line-height:1.5;margin-bottom:12px}
+.tech p{font-size:13.5px;color:var(--gray);line-height:1.9;margin-bottom:20px}
+.tech .kv{display:flex;justify-content:space-between;font-size:12.5px;color:var(--gray);padding:9px 0;border-bottom:1px dashed var(--line)}
+.tech .kv b{color:var(--red);font-size:15px}
+
+/* ---------- 公司简介 ---------- */
+.about{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.about .im{position:relative}
+.about .im img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.about .im::before{content:"";position:absolute;left:-14px;top:-14px;width:120px;height:120px;border-left:3px solid var(--red);border-top:3px solid var(--red)}
+.about .im::after{content:"";position:absolute;right:-14px;bottom:-14px;width:120px;height:120px;border-right:3px solid var(--red);border-bottom:3px solid var(--red)}
+.about h2{font-size:clamp(22px,2.2vw,28px);font-weight:800;margin-bottom:8px}
+.about .line{width:38px;height:3px;background:var(--red);margin-bottom:24px}
+.about p{font-size:14.5px;color:var(--gray);line-height:2.05;margin-bottom:14px}
+.about p b{color:var(--ink)}
+.about .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.about .facts div{font-size:12.5px;color:var(--gray)}
+.about .facts b{display:block;font-size:24px;color:var(--red);font-weight:800;line-height:1.2;margin-bottom:4px}
+
+/* ---------- 资质 ---------- */
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cert{background:#fff;border:1px solid var(--line);padding:12px;transition:.3s}
+.cert:hover{border-color:var(--red);box-shadow:0 16px 34px -24px rgba(0,0,0,.45)}
+.cert .im{aspect-ratio:3/3.6;overflow:hidden;background:#f0eeea}
+.cert img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.cert .cp{padding:14px 4px 4px;font-size:13px;font-weight:700}
+.cert .cp small{display:block;font-weight:400;font-size:11.5px;color:var(--gray);margin-top:5px;line-height:1.7}
+
+/* ---------- 新闻 ---------- */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.nitem{display:block;padding:26px 24px;background:#fff;border:1px solid var(--line);transition:.3s}
+.nitem:hover{border-color:var(--red);transform:translateY(-4px)}
+.nitem .dt{font-size:12px;color:var(--gray-l);letter-spacing:.08em}
+.nitem h3{font-size:15.5px;font-weight:700;margin:10px 0 8px;line-height:1.6}
+.nitem p{font-size:13px;color:var(--gray);line-height:1.85;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---------- 联系 ---------- */
+.contact{background:var(--bg2)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.cinfo .row{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.cinfo .row:first-of-type{border-top:1px solid var(--line)}
+.cinfo .k{font-size:13px;color:var(--gray);flex:0 0 74px;letter-spacing:.08em}
+.cinfo .v{font-size:14.5px;font-weight:600}
+.cinfo .v span{display:block;font-weight:400;font-size:12.5px;color:var(--gray);margin-top:3px}
+.form{background:#fff;border:1px solid var(--line);padding:32px}
+.form h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.form .sm{font-size:12.5px;color:var(--gray);margin-bottom:22px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:12.5px;color:var(--gray);margin-bottom:7px}
+.fg input,.fg select{width:100%;border:1px solid var(--line);background:#fbfaf8;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--ink);outline:none;transition:.25s;border-radius:0}
+.fg input:focus,.fg select:focus{border-color:var(--red);background:#fff}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .btn{width:100%;margin-top:6px}
+.form .fine{font-size:11.5px;color:var(--gray-l);text-align:center;margin-top:12px}
+
+/* ---------- 页脚 ---------- */
+footer{background:#1C1917;color:#B8B2AC}
+.fmain{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding:52px 0 44px}
+.fmain .brand b{color:#fff;font-size:17px;letter-spacing:.1em;display:block}
+.fmain .brand span{font-size:8.5px;letter-spacing:.26em;color:#6C6763;display:block;margin-top:4px}
+.fmain .brand p{font-size:13px;line-height:2;margin-top:18px;color:#8E8882;max-width:290px}
+.fcol h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px}
+.fcol a{display:block;font-size:13px;padding:6px 0;color:#8E8882;transition:.25s}
+.fcol a:hover{color:#fff;padding-left:4px}
+.fbot{border-top:1px solid #2E2A27;padding:18px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#6C6763}
+
+/* ---------- 动效 ---------- */
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .nav{display:none}
+  .burger{display:block}
+  .hd-tel{display:none}
+  .adv{grid-template-columns:1fr 1fr}
+  .prods,.tech,.news,.certs,.partners{grid-template-columns:1fr 1fr}
+  .tech .t{border-right:0;border-bottom:1px solid var(--line);padding:28px 0}
+  .tech .t:not(:first-child){padding-left:0}
+  .about,.cgrid{grid-template-columns:1fr;gap:36px}
+  .about .im{order:-1}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(1),.stats div:nth-child(2){border-bottom:1px solid rgba(255,255,255,.18)}
+  .fmain{grid-template-columns:1fr 1fr}
+  .mnav.open{display:block}
+}
+@media (max-width:640px){
+  .adv,.prods,.news,.certs,.partners,.frow{grid-template-columns:1fr}
+  .sec{padding:56px 0}
+  .hero{height:560px}
+  .slide::after{background:linear-gradient(180deg,rgba(12,8,8,.55) 0%,rgba(12,8,8,.78) 45%,rgba(12,8,8,.86) 100%)}
+  .slide h1{font-size:26px}
+  .slide p{font-size:13.5px}
+  .arrow{display:none}
+  .partners{grid-template-columns:1fr 1fr}
+  .topbar .l span:nth-child(2),.topbar .r{display:none}
+  .topbar .wrap{justify-content:center}
+  .mnav{top:106px}
+}
+/* 移动菜单 */
+.mnav{display:none;position:fixed;left:0;right:0;top:118px;z-index:99;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -22px rgba(0,0,0,.4);padding:6px 24px 14px}
+.mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.mnav a:last-child{border-bottom:0;color:var(--red);font-weight:700}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.001s!important;animation-duration:.001s!important}
+  .js .rv{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部信息条 -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="l"><span>成都御火凌空航空科技有限公司</span><span>可回收灭火巡飞器 · 森林消防 · 应急救援</span></div>
+    <div class="r"><a href="#contact">商务合作</a><a href="#certs">资质公示</a></div>
+  </div>
+</div>
+
+<!-- 头部 -->
+<header id="hd">
+  <div class="wrap hd">
+    <a class="logo" href="#top">
+      <img src="assets/logo.png" alt="御火凌空 YH 商标">
+      <span class="tx"><b>御火凌空</b><span>YUHUO LINGKONG</span></span>
+    </a>
+    <ul class="nav">
+      <li class="on"><a href="#top">首页</a></li>
+      <li><a href="#product">产品中心</a></li>
+      <li><a href="#tech">核心技术</a></li>
+      <li><a href="#proof">实证案例</a></li>
+      <li><a href="#certs">资质荣誉</a></li>
+      <li><a href="#about">公司简介</a></li>
+      <li><a href="#contact">联系我们</a></li>
+    </ul>
+    <div class="hd-tel"><div><small>服务热线</small>150 3084 2816</div></div>
+    <button class="burger" id="burger" aria-label="菜单"><i></i><i></i><i></i></button>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <a href="#top">首页</a>
+  <a href="#product">产品中心</a>
+  <a href="#tech">核心技术</a>
+  <a href="#proof">实证案例</a>
+  <a href="#certs">资质荣誉</a>
+  <a href="#about">公司简介</a>
+  <a href="#contact">联系我们</a>
+</div>
+
+<!-- 轮播 -->
+<section class="hero" id="top">
+  <div class="slide on">
+    <img src="assets/work-assembly.jpg" alt="御火凌空 2.0 在野外试飞场完成整备">
+    <div class="cap"><div class="wrap">
+      <div class="en">Forest Fire · Emergency Equipment</div>
+      <h1>黄金三分钟，<em>不再等。</em></h1>
+      <p>国内率先实现可回收、可集群、可量产的森林灭火巡飞器。单兵弹射、发射即到，三分钟抵达火场。</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-red">获取报价与方案</a>
+        <a href="#proof" class="btn btn-ghost">查看试飞实录</a>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/hero-rail.jpg" alt="御火凌空 2.0 架设在发射导轨上" style="object-position:50% 42%">
+    <div class="cap"><div class="wrap">
+      <div class="en">Retrievable Loitering Munition</div>
+      <h1>打出去，<em>还能收回来。</em></h1>
+      <p>伞降回收、模块化机身、部件可修可换——空中灭火从"一次性"变成"可复用"。</p>
+      <div class="btns"><a href="#product" class="btn btn-red">了解产品</a></div>
+    </div></div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/firefighter.jpg" alt="消防员在驻防现场操作御火凌空设备">
+    <div class="cap"><div class="wrap">
+      <div class="en">Field Verified</div>
+      <h1>不是在实验室里飞，<br><em>是在消防队的辖区里飞。</em></h1>
+      <p>成都消防救援机动支队、康定市消防救援大队等四家单位完成试点验证。</p>
+      <div class="btns"><a href="#proof" class="btn btn-red">查看实证案例</a></div>
+    </div></div>
+  </div>
+
+  <button class="arrow prev" id="prev" aria-label="上一张">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="arrow next" id="next" aria-label="下一张">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="dots" id="dots"></div>
+</section>
+
+<!-- 四宫格优势 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>让一线消防员<em>不用往里冲</em></h2>
+      <div class="line"></div>
+      <p>面向山地林火处置的实战短板而设计，四个方向把装备做成"用得起、打得准、回得来"</p>
+    </div>
+    <div class="adv">
+      <div class="item rv">
+        <div class="ico">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7M20 12a8 8 0 0 1-13.7 5.6L4 15.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M20 4v4.7h-4.7M4 20v-4.7h4.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>可回收复用</h3>
+        <p>伞降完整回收，机身可拆可修，单次任务不再整机报废</p>
+      </div>
+      <div class="item rv d1">
+        <div class="ico">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="1.7"/><circle cx="4.5" cy="5.5" r="1.9" stroke="currentColor" stroke-width="1.7"/><circle cx="19.5" cy="5.5" r="1.9" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="20.5" r="1.9" stroke="currentColor" stroke-width="1.7"/><path d="M6 6.7 10 10M18 6.7 14 10M12 17.9v-3.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>集群协同</h3>
+        <p>12 至 120 架编队作业，单次可覆盖约 7200 平方米火线</p>
+      </div>
+      <div class="item rv d2">
+        <div class="ico">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M12 9v4.4l2.8 1.7M9 2.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>三分钟响应</h3>
+        <p>筒式弹射、发射即投入任务，无需现场组装与空域审批</p>
+      </div>
+      <div class="item rv d3">
+        <div class="ico">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2.8 20 6v6.2c0 3.4-1.6 6-4 7.8-1.2.9-2.6 1.5-4 1.9-1.4-.4-2.8-1-4-1.9-2.4-1.8-4-4.4-4-7.8V6l8-3.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>成本可控</h3>
+        <p>单架 3 万元，是常规空中灭火装备投入的三分之一</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据条 -->
+<section class="stats">
+  <div class="wrap">
+    <div><div class="n">30<small>km</small></div><div class="t">最大作业半径</div></div>
+    <div><div class="n">≤1<small>m</small></div><div class="t">打击精度</div></div>
+    <div><div class="n">760<small>+</small></div><div class="t">次试飞与仿真测试</div></div>
+    <div><div class="n">98<small>%</small></div><div class="t">目标识别准确率</div></div>
+  </div>
+</section>
+
+<!-- 试点单位 -->
+<section class="sec gray">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>已在一线单位<em>试点验证</em></h2>
+      <div class="line"></div>
+      <p>2025.09 — 2026.08，从实验室检测到高原驻防，逐项完成实地应用</p>
+    </div>
+    <div class="partners">
+      <div class="p rv">成都消防救援机动支队成都大队<small>2026.04 至 2026.05</small></div>
+      <div class="p rv d1">康定市消防救援大队<small>2026.07 至 2026.08</small></div>
+      <div class="p rv d2">中航（成都）无人机系统股份有限公司<small>2025.09</small></div>
+      <div class="p rv d3">四川凌空天行科技有限公司<small>2025.06</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品中心 -->
+<section class="sec" id="product">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>产品中心</h2>
+      <div class="line"></div>
+      <p>一套标准配置 12 架集群作战，从发射、投送到回收形成完整闭环</p>
+    </div>
+    <div class="prods">
+      <article class="prod rv">
+        <div class="im"><img src="assets/hero-rail.jpg" alt="御火凌空 2.0 可回收灭火巡飞器" style="object-position:50% 45%"></div>
+        <div class="tx">
+          <h3>御火凌空 2.0 · 可回收灭火巡飞器</h3>
+          <p>巡航 30 分钟，载荷 10kg，打击精度 ≤1 米，整机自重 10kg。</p>
+          <a href="#contact" class="more">了解详情 <i>›</i></a>
+        </div>
+      </article>
+      <article class="prod rv d1">
+        <div class="im"><img src="assets/firefighter.jpg" alt="智能集群巡飞系统地面站操作"></div>
+        <div class="tx">
+          <h3>智能集群巡飞系统</h3>
+          <p>八大自主软件模块，最大 120 架组网，调度响应 ≤20 毫秒。</p>
+          <a href="#tech" class="more">了解详情 <i>›</i></a>
+        </div>
+      </article>
+      <article class="prod rv d2">
+        <div class="im"><img src="assets/truck.jpg" alt="发射装置与地面控制站随车运输"></div>
+        <div class="tx">
+          <h3>发射装置与地面控制站</h3>
+          <p>单兵筒式弹射，车辆可载，抵达后三分钟内完成部署。</p>
+          <a href="#contact" class="more">了解详情 <i>›</i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 核心技术 -->
+<section class="sec gray" id="tech">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>三项核心技术</h2>
+      <div class="line"></div>
+      <p>5 项专利、5 项软件著作权，第一发明人均为团队成员</p>
+    </div>
+    <div class="tech">
+      <div class="t rv">
+        <div class="no">核心技术 一</div>
+        <h3>可回收模块化机身 · 孔洞式工字梁结构</h3>
+        <p>碳纤维骨架替代一体开模结构，孔洞式工字梁按载荷分区布孔，铺层定向设计兼顾刚度与减重。机身可单独拆解检修，不再整机报废。</p>
+        <div class="kv"><span>整机结构减重</span><b>30%</b></div>
+        <div class="kv"><span>量产综合成本</span><b>↓40%</b></div>
+        <div class="kv"><span>结构减重区间</span><b>20–40%</b></div>
+      </div>
+      <div class="t rv d1">
+        <div class="no">核心技术 二</div>
+        <h3>分层堆叠式板卡一体化集成</h3>
+        <p>把分散拼装的硬件收进分层堆叠架构，元器件分区布置、软硬件解耦隔离，单点故障不再牵连整机，升级算法无需改动结构。</p>
+        <div class="kv"><span>软硬件集成调度</span><b>+98%</b></div>
+        <div class="kv"><span>整机耦合度</span><b>↓85%</b></div>
+        <div class="kv"><span>故障影响范围</span><b>单点隔离</b></div>
+      </div>
+      <div class="t rv d2">
+        <div class="no">核心技术 三</div>
+        <h3>智能集群巡飞系统</h3>
+        <p>自研八大软件模块，打通规划、编队、侦察、打击全链路，一次任务可指挥上百架协同作业，形成覆盖式灭火能力。</p>
+        <div class="kv"><span>最大集群规模</span><b>120 架</b></div>
+        <div class="kv"><span>集群覆盖面积</span><b>7200㎡</b></div>
+        <div class="kv"><span>调度响应</span><b>≤20ms</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 实证案例 -->
+<section class="sec" id="proof">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>实证案例</h2>
+      <div class="line"></div>
+      <p>760+ 次试飞、龙泉山森林防灭火实战演练、四家单位试点验收</p>
+    </div>
+    <div class="about">
+      <div class="im rv"><img src="assets/team-field.jpg" alt="团队在龙泉山完成森林防灭火实战演练"></div>
+      <div class="rv d1">
+        <h2>龙泉山实战演练 · 高原驻防验证</h2>
+        <div class="line"></div>
+        <p>2026 年，团队在成都市龙泉山森林防灭火实战演练中完成全流程验证：作战半径 30 公里、打击精度 ≤1 米、12 架集群协同。</p>
+        <p>同年 7 月至 8 月，设备在海拔更高的康定市开展驻防试点，覆盖榆林、姑咱等 10 个镇，验证高原缺氧与强乱流条件下的稳定性。</p>
+        <p style="color:var(--ink);border-left:3px solid var(--red);padding-left:16px;margin-top:18px">"该设备可在 3 分钟内完成部署并精准锁定火点，目标识别率达 98% 以上，打击精度优于 1 米。"<br><span style="font-size:12.5px;color:var(--gray)">—— 中航（成都）无人机系统股份有限公司《产品试点证明》</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 资质荣誉 -->
+<section class="sec gray" id="certs">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>资质荣誉</h2>
+      <div class="line"></div>
+      <p>检测报告、科技查新、应用证明原件，可应采购要求提供复印件调阅</p>
+    </div>
+    <div class="certs">
+      <a class="cert rv" href="#certs">
+        <div class="im"><img src="assets/doc-inspect-report.jpg" alt="上海市质量监督检验技术研究院检测报告查验页"></div>
+        <div class="cp">权威检测报告<small>上海市质量监督检验技术研究院 · CNAS L0128</small></div>
+      </a>
+      <a class="cert rv d1" href="#certs">
+        <div class="im"><img src="assets/doc-chaxin.jpg" alt="科技查新报告内页"></div>
+        <div class="cp">科技查新报告<small>四川省科技成果查新咨询服务中心 · H20263395</small></div>
+      </a>
+      <a class="cert rv d2" href="#certs">
+        <div class="im"><img src="assets/doc-apply.jpg" alt="中航（成都）无人机系统股份有限公司试点证明"></div>
+        <div class="cp">产品试点证明<small>中航（成都）无人机系统股份有限公司 · 2026.09</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 新闻资讯 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>新闻资讯</h2>
+      <div class="line"></div>
+      <p>公司动态、试点进展与行业政策解读</p>
+    </div>
+    <div class="news">
+      <a class="nitem rv" href="#">
+        <div class="dt">2026-09-09</div>
+        <h3>成都御火凌空航空科技有限公司正式注册成立</h3>
+        <p>公司落地成都航空职业技术大学科技园，主营无人消防灭火装备研发与场景化应用，进入小批量交付阶段。</p>
+      </a>
+      <a class="nitem rv d1" href="#">
+        <div class="dt">2026-07-08</div>
+        <h3>康定市消防救援大队完成高原驻防试点验收</h3>
+        <p>覆盖全市 10 个镇，验证高原缺氧、强乱流条件下的飞行稳定性与火情识别能力。</p>
+      </a>
+      <a class="nitem rv d2" href="#">
+        <div class="dt">2026-05-03</div>
+        <h3>成都消防救援机动支队成都大队试点应用结束</h3>
+        <p>试点期间完成青城山、龙泉山等重点林区的靠前驻防任务，火情识别与应急响应效率显著提升。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 公司简介 -->
+<section class="sec gray" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="rv">
+        <h2>公司简介</h2>
+        <div class="line"></div>
+        <p>成都御火凌空航空科技有限公司成立于 2026 年 9 月，入驻成都航空职业技术大学科技园，专注<b>可回收灭火巡飞器</b>的研发与场景化应用。</p>
+        <p>公司的起点是一次真实的失去：创始人的兄长在火场救援中受伤，"能不能不让人往里冲"成了团队最初的问题。700 余天里，团队完成从方案到样机、从试飞到实装的全过程。</p>
+        <p>目前已形成 5 项专利、5 项软件著作权的自主知识产权体系，并通过权威机构全项检测与科技查新，产品在川内多个林区单位开展常态化试点。</p>
+        <div class="facts">
+          <div><b>700<small style="font-size:12px">天</small></b>研发攻关周期</div>
+          <div><b>10<small style="font-size:12px">项</small></b>自主知识产权</div>
+          <div><b>4<small style="font-size:12px">家</small></b>一线试点单位</div>
+        </div>
+      </div>
+      <div class="im rv d1"><img src="assets/team-carry.jpg" alt="团队在成航实训基地完成整机转运与装配"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系我们 -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <h2>联系我们</h2>
+      <div class="line"></div>
+      <p>留下单位与场景，48 小时内回复，并提供同类地形条件下的试点数据</p>
+    </div>
+    <div class="cgrid">
+      <div class="cinfo rv">
+        <div class="row"><div class="k">服务热线</div><div class="v" style="color:var(--red);font-size:20px">150 3084 2816<span>王天一 · 工作日 9:00 — 18:00</span></div></div>
+        <div class="row"><div class="k">商务邮箱</div><div class="v">business@yuhuolingkong.com<span>方案、报价与资料索取</span></div></div>
+        <div class="row"><div class="k">公司地址</div><div class="v">四川省成都市龙泉驿区柏合街道合纵路 266 号<span>成航大厦 2 楼 B2-1</span></div></div>
+        <div class="row"><div class="k">来访预约</div><div class="v">可预约参观样机与试飞<span>请提前两个工作日联系</span></div></div>
+      </div>
+
+      <form class="form rv d1" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='已收到，我们会尽快联系您';">
+        <h3>申请报价与试用</h3>
+        <div class="sm">请填写以下信息，我们会在 48 小时内与您联系</div>
+        <div class="frow">
+          <div class="fg"><label>单位名称 *</label><input type="text" placeholder="如：XX 市消防救援支队" required></div>
+          <div class="fg"><label>联系人 *</label><input type="text" placeholder="姓名 / 职务" required></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>手机 / 微信 *</label><input type="tel" placeholder="用于方案与报价回复" required></div>
+          <div class="fg"><label>意向数量</label>
+            <select>
+              <option>1–12 架（单套试用）</option>
+              <option>12–60 架（中队级配置）</option>
+              <option>60 架以上（区域级配置）</option>
+              <option>暂不确定</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg"><label>应用场景</label>
+          <select>
+            <option>山地森林火灾</option>
+            <option>丘陵沟壑火灾</option>
+            <option>草场平原火灾</option>
+            <option>偏远村镇火灾</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-red">提交询价</button>
+        <p class="fine">我们承诺不向第三方提供您的联系方式</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="fmain">
+      <div class="brand">
+        <img src="assets/logo.png" alt="御火凌空 YH 商标" style="height:40px;width:auto;margin-bottom:14px">
+        <b>御火凌空</b><span>YUHUO LINGKONG</span>
+        <p>成都御火凌空航空科技有限公司<br>专注可回收灭火巡飞器的研发与场景化应用</p>
+      </div>
+      <div class="fcol">
+        <h4>产品中心</h4>
+        <a href="#product">御火凌空 2.0</a>
+        <a href="#tech">智能集群巡飞系统</a>
+        <a href="#product">发射装置与地面站</a>
+      </div>
+      <div class="fcol">
+        <h4>了解我们</h4>
+        <a href="#about">公司简介</a>
+        <a href="#proof">实证案例</a>
+        <a href="#certs">资质荣誉</a>
+      </div>
+      <div class="fcol">
+        <h4>联系方式</h4>
+        <a href="#contact">服务热线 150 3084 2816</a>
+        <a href="#contact">business@yuhuolingkong.com</a>
+        <a href="#contact">四川省成都市龙泉驿区合纵路 266 号</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 成都御火凌空航空科技有限公司　保留所有权利</span>
+      <span>蜀ICP备XXXXXXXX号　|　营业执照信息公示</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* 头部阴影 */
+var hd = document.getElementById('hd');
+window.addEventListener('scroll', function(){
+  hd.classList.toggle('sticky', window.scrollY > 10);
+}, {passive:true});
+
+/* 移动菜单 */
+var burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
+burger.addEventListener('click', function(){ mnav.classList.toggle('open'); });
+mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mnav.classList.remove('open'); }); });
+
+/* 轮播 */
+var slides = [].slice.call(document.querySelectorAll('.slide')),
+    dotsBox = document.getElementById('dots'),
+    cur = 0, timer = null;
+
+slides.forEach(function(_, i){
+  var b = document.createElement('button');
+  b.setAttribute('aria-label', '第 ' + (i+1) + ' 张');
+  if (i === 0) b.className = 'on';
+  b.addEventListener('click', function(){ go(i); });
+  dotsBox.appendChild(b);
+});
+var dots = [].slice.call(dotsBox.children);
+
+function go(i){
+  cur = (i + slides.length) % slides.length;
+  slides.forEach(function(s, k){ s.classList.toggle('on', k === cur); });
+  dots.forEach(function(d, k){ d.classList.toggle('on', k === cur); });
+  restart();
+}
+function next(){ go(cur + 1); }
+function restart(){
+  if (timer) clearInterval(timer);
+  timer = setInterval(next, 6500);
+}
+document.getElementById('next').addEventListener('click', next);
+document.getElementById('prev').addEventListener('click', function(){ go(cur - 1); });
+restart();
+
+/* 进入视口 */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
+}, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+/* 顶部导航高亮 */
+var secs = ['top','product','tech','proof','certs','about','contact'];
+var links = [].slice.call(document.querySelectorAll('.nav a'));
+window.addEventListener('scroll', function(){
+  var y = window.scrollY + 140, active = 'top';
+  secs.forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && el.offsetTop <= y) active = id;
+  });
+  links.forEach(function(a){
+    a.parentNode.classList.toggle('on', a.getAttribute('href') === '#' + active);
+  });
+}, {passive:true});
+</script>
+</body>
+</html>
