@@ -1,5 +1,25 @@
 # 御火凌空 官网 · 工作目录
 
+## 线上地址
+
+- 网站：https://yi111111321.github.io/yuhuo-website/
+- 仓库：https://github.com/yi111111321/yuhuo-website
+
+## 更新流程
+
+改完 `index.html` 或替换 `assets/` 里的图后：
+
+```powershell
+cd C:\Users\Lenovo\Desktop\御火网站
+git add -A
+git commit -m "更新说明"
+git push
+```
+
+约 1 分钟后 GitHub Pages 自动重新发布，刷新网页即可看到。
+
+> 注：`御火凌空_官网建设规划.md`、`资料/`、`预览图/`、`assets/备用素材/` 已在 `.gitignore` 中排除，不会出现在公开仓库里。
+
 | 文件 | 说明 |
 |---|---|
 | `index.html` | 官网首页（静态，双击用浏览器打开即可，无需联网/服务器） |
