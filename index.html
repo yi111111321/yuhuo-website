@@ -157,6 +157,15 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .prod .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;color:var(--red);font-weight:600}
 .prod .more i{font-style:normal;transition:transform .3s}
 .prod:hover .more i{transform:translateX(5px)}
+.prod .flag{position:absolute;left:0;top:0;z-index:2;font-size:11.5px;letter-spacing:.06em;padding:6px 12px;background:var(--red);color:#fff;font-weight:600}
+.prod .flag.gift{background:#2F7D4F}
+.prod .flag.opt{background:#8A7A5E}
+.prod{position:relative}
+.price-note{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);background:#fff;margin-top:24px}
+.price-note .pn-item{padding:20px 24px;border-left:1px solid var(--line)}
+.price-note .pn-item:first-child{border-left:0}
+.price-note .pn-k{display:block;font-size:11.5px;letter-spacing:.14em;color:var(--red);font-weight:700;margin-bottom:7px}
+.price-note .pn-v{font-size:12.5px;color:var(--gray);line-height:1.85}
 
 /* ---------- 表格 ---------- */
 .table-wrap{overflow-x:auto;border:1px solid var(--line);background:#fff;margin-top:26px}
@@ -364,6 +373,9 @@ footer{background:#1C1917;color:#B8B2AC}
   .tl2 li{grid-template-columns:70px 1fr;gap:24px}
   .tl2 li::before{left:66px}
   .scene:nth-child(odd){border-right:0}
+  .price-note{grid-template-columns:1fr}
+  .price-note .pn-item{border-left:0;border-top:1px solid var(--line)}
+  .price-note .pn-item:first-child{border-top:0}
   .wx{flex-direction:column;text-align:center;align-items:center}
 }
 .mnav{display:none;position:fixed;left:0;right:0;top:118px;z-index:99;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -22px rgba(0,0,0,.4);padding:6px 24px 14px;max-height:calc(100vh - 118px);overflow:auto}
@@ -607,33 +619,51 @@ footer{background:#1C1917;color:#B8B2AC}
     <div class="sec-hd rv">
       <h2>产品中心</h2>
       <div class="line"></div>
-      <p>一套标准配置 12 架集群作战，从发射、投送到回收形成完整闭环</p>
+      <p>我们只卖一样东西：可回收灭火巡飞器。发射筒随机附赠，地面控制站按需选配，不强制搭售</p>
     </div>
     <div class="prods">
       <article class="prod rv">
+        <span class="flag">主产品</span>
         <div class="im"><img src="assets/hero-rail.jpg" alt="御火凌空 2.0 可回收灭火巡飞器" style="object-position:50% 45%"></div>
         <div class="tx">
           <h3>御火凌空 2.0 · 可回收灭火巡飞器</h3>
-          <p>巡航 30 分钟、载荷 10 kg、打击精度 ≤1 米，整机自重 10 kg，伞降回收后可复用。</p>
+          <p>巡航 30 分钟、载荷 10 kg、打击精度 ≤1 米，伞降回收后可复用。单架 3 万元，标准套装配 12 架。</p>
           <a href="#spec" class="more">查看参数 <i>›</i></a>
         </div>
       </article>
       <article class="prod rv d1">
-        <div class="im"><img src="assets/firefighter.jpg" alt="智能集群巡飞系统地面站操作"></div>
+        <span class="flag gift">随产品附赠</span>
+        <div class="im"><img src="assets/work-assembly.jpg" alt="发射筒与巡飞器整备"></div>
         <div class="tx">
-          <h3>智能集群巡飞系统</h3>
-          <p>八大自主软件模块，支持 12–120 架组网，调度响应 ≤20 毫秒；满编 120 架时最大覆盖约 7200 平方米火线。</p>
-          <a href="#tech" class="more">查看参数 <i>›</i></a>
-        </div>
-      </article>
-      <article class="prod rv d2">
-        <div class="im"><img src="assets/truck.jpg" alt="发射装置与地面控制站随车运输"></div>
-        <div class="tx">
-          <h3>发射装置与地面控制站</h3>
-          <p>单兵筒式弹射，车辆可载，抵达现场后三分钟内完成部署并投入任务。</p>
+          <h3>筒式发射装置</h3>
+          <p>每套巡飞器随附发射筒，高压气体弹射离筒、展翼秒级响应，单兵可携、车辆可载，不单独收费。</p>
           <a href="#spec" class="more">查看参数 <i>›</i></a>
         </div>
       </article>
+      <article class="prod rv d2">
+        <span class="flag opt">选配 · 2,000 元/台</span>
+        <div class="im"><img src="assets/firefighter.jpg" alt="地面控制站与数据链路终端操作"></div>
+        <div class="tx">
+          <h3>地面控制站（选配）</h3>
+          <p>非必需。不做额外采购时，可直接将<strong>数据链路终端</strong>插入笔记本使用，同样可完成航线规划与任务监控。</p>
+          <a href="#contact" class="more">咨询配置 <i>›</i></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="price-note rv">
+      <div class="pn-item">
+        <span class="pn-k">标配</span>
+        <span class="pn-v">12 架巡飞器 + 12 具发射筒（附赠）+ 备件与操作手册</span>
+      </div>
+      <div class="pn-item">
+        <span class="pn-k">选配</span>
+        <span class="pn-v">地面控制站 2,000 元/台 —— 也可用笔记本 + 数据链路终端替代，不额外收费</span>
+      </div>
+      <div class="pn-item">
+        <span class="pn-k">价格</span>
+        <span class="pn-v">巡飞器 3 万元/架，含 1 年免费售后</span>
+      </div>
     </div>
   </div>
 </section>
@@ -658,7 +688,9 @@ footer{background:#1C1917;color:#B8B2AC}
           <tr><td>整机尺寸</td><td>120 × 20 × 20 cm</td><td>单机自重</td><td>10 kg</td></tr>
           <tr><td>火源识别准确率</td><td>&gt; 99%</td><td>综合任务成功率</td><td>&gt; 95%</td></tr>
           <tr><td>整机防护等级</td><td>IP54</td><td>识别响应延迟</td><td>≤ 0.8 s</td></tr>
-          <tr><td>标准套装</td><td>12 架 / 套</td><td>单价</td><td>3 万元 / 架</td></tr>
+          <tr><td>标准套装</td><td>12 架 + 12 具发射筒</td><td>巡飞器单价</td><td>3 万元 / 架</td></tr>
+          <tr><td>发射筒</td><td>随套装附赠</td><td>地面控制站</td><td>选配 2,000 元/台</td></tr>
+          <tr><td>数据链路终端</td><td>随机配套</td><td>替代方案</td><td>笔记本 + 终端直连</td></tr>
         </tbody>
       </table>
     </div>
@@ -928,14 +960,14 @@ footer{background:#1C1917;color:#B8B2AC}
       <p>装备交付只是开始，我们同时提供培训、备件与持续的技术支持</p>
     </div>
     <div class="svc">
-      <div class="c rv"><h3><span>01</span>交付与培训</h3><p>提供整机、发射装置、地面控制站与备件交付，并开展理论讲解、地面站操作、发射与回收全流程培训。</p></div>
+      <div class="c rv"><h3><span>01</span>交付与培训</h3><p>交付巡飞器整机与随附发射筒、备件及操作手册；选配地面站的一并交付。开展理论讲解、地面站或终端操作、发射与回收全流程培训。</p></div>
       <div class="c rv d1"><h3><span>02</span>备件与维修</h3><p>核心部件平价更换、非核心部件成本价更换；机身模块化设计支持单独检修，不必整机返厂。</p></div>
       <div class="c rv d2"><h3><span>03</span>技术支持</h3><p>提供任务规划、参数配置与故障排查支持；可根据项目需求，配合完成演示、演练与技术对接。</p></div>
     </div>
 
     <div class="faq">
-      <details class="qa rv"><summary>一套标准配置包含哪些内容？</summary><p>标准套装为 12 架巡飞器，配套发射装置、地面控制站、备用机身部件与操作手册；具体配置可按使用单位的需求调整。</p></details>
-      <details class="qa rv"><summary>价格和售后政策是怎样的？</summary><p>单架 3 万元，标准套装配 12 架。含 1 年免费售后，期满后核心零部件平价更换、非核心部件成本价更换。</p></details>
+      <details class="qa rv"><summary>一套标准配置包含哪些内容？</summary><p>标准套装为 12 架巡飞器，随附对应数量的发射筒、备用机身部件与操作手册。地面控制站属于选配件，可按需另购，也可以直接用笔记本接数据链路终端，不额外收费。</p></details>
+      <details class="qa rv"><summary>价格和售后政策是怎样的？</summary><p>巡飞器 3 万元/架，标准套装配 12 架，发射筒随附不另收费；地面控制站选配 2,000 元/台。含 1 年免费售后，期满后核心零部件平价更换、非核心部件成本价更换。</p></details>
       <details class="qa rv"><summary>高原、密林等复杂环境能用吗？</summary><p>已在康定高原山地与龙泉山密林完成实测验证，抗风等级 6 级。高原缺氧与强乱流条件下的飞行稳定性经过专项测试。</p></details>
       <details class="qa rv"><summary>需要办理空域审批吗？</summary><p>装备采用筒式弹射起飞、低空作业。具体空域使用需按属地管理规定执行，我方可提供技术参数与报备所需材料配合办理。</p></details>
       <details class="qa rv"><summary>交付周期大概多久？</summary><p>按订单排产，具体交期以合同约定为准。目前具备小批量交付能力，首批套装交付周期可进一步沟通确认。</p></details>
@@ -1047,7 +1079,7 @@ footer{background:#1C1917;color:#B8B2AC}
         <h4>产品中心</h4>
         <a href="#product">御火凌空 2.0</a>
         <a href="#tech">智能集群巡飞系统</a>
-        <a href="#product">发射装置与地面站</a>
+        <a href="#product">发射筒与选配件</a>
         <a href="#spec">技术参数对比</a>
       </div>
       <div class="fcol">
