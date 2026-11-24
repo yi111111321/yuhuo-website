@@ -236,6 +236,20 @@ td small{color:var(--gray);font-size:11.5px}
 .badge{border:1px solid var(--line);background:#fff;font-size:12.5px;padding:9px 16px;color:var(--ink-2)}
 .badge::before{content:"";display:inline-block;width:5px;height:5px;background:var(--red);margin-right:8px;vertical-align:2px}
 
+/* 营业执照 */
+.license{display:grid;grid-template-columns:.86fr 1.14fr;gap:38px;margin-top:22px;background:#fff;border:1px solid var(--line);padding:26px}
+.lic-im{position:relative;display:block;overflow:hidden;border:1px solid var(--line);background:#f7f5f2}
+.lic-im img{width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.lic-im:hover img{transform:scale(1.03)}
+.lic-zoom{position:absolute;right:0;bottom:0;background:rgba(31,27,24,.85);color:#fff;font-size:11.5px;padding:7px 13px;letter-spacing:.06em}
+.lic-info h3{font-size:18px;font-weight:800;margin-bottom:16px;padding-left:12px;border-left:3px solid var(--red);line-height:1.5}
+.lic-info dl{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.lic-info dl>div{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px;align-items:baseline}
+.lic-info dt{color:var(--gray);flex:0 0 118px;font-size:12px;white-space:nowrap}
+.lic-info dd{color:var(--ink);line-height:1.7;margin:0}
+.lic-info dl>div.wide{grid-column:1/-1}
+.lic-note{font-size:11.5px;color:var(--gray-l);margin-top:14px;line-height:1.8}
+
 /* ---------- 团队 ---------- */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .member{background:#fff;border:1px solid var(--line);padding:24px 18px;text-align:center;transition:.3s}
@@ -374,6 +388,8 @@ footer{background:#1C1917;color:#B8B2AC}
   .tl2 li{grid-template-columns:70px 1fr;gap:24px}
   .tl2 li::before{left:66px}
   .scene:nth-child(odd){border-right:0}
+  .license{grid-template-columns:1fr;gap:20px;padding:18px}
+  .lic-info dl{grid-template-columns:1fr}
   .price-note{grid-template-columns:1fr}
   .price-note .pn-item{border-left:0;border-top:1px solid var(--line)}
   .price-note .pn-item:first-child{border-top:0}
@@ -916,6 +932,29 @@ footer{background:#1C1917;color:#B8B2AC}
       <span class="badge">5 项软件著作权</span>
       <span class="badge">科技查新：三项技术国内未见相同公开报道</span>
     </div>
+
+    <h4 class="sub-h" id="license" style="margin-top:52px">工商登记信息</h4>
+    <div class="license rv">
+      <a class="lic-im" href="assets/business-license.jpg" target="_blank" rel="noopener">
+        <img src="assets/business-license.jpg" alt="成都御火凌空航空科技有限公司营业执照">
+        <span class="lic-zoom">点击查看原图</span>
+      </a>
+      <div class="lic-info">
+        <h3>营业执照</h3>
+        <dl>
+          <div class="wide"><dt>名称</dt><dd>成都御火凌空航空科技有限公司</dd></div>
+          <div><dt>统一社会信用代码</dt><dd>91510112MAKMLUKX77</dd></div>
+          <div><dt>法定代表人</dt><dd>王天一</dd></div>
+          <div><dt>类型</dt><dd>有限责任公司（自然人投资或控股）</dd></div>
+          <div><dt>注册资本</dt><dd>50 万元人民币</dd></div>
+          <div><dt>成立日期</dt><dd>2026 年 9 月 9 日</dd></div>
+          <div><dt>登记机关</dt><dd>龙泉驿区政务服务管理和行政审批局</dd></div>
+          <div class="wide"><dt>住所</dt><dd>四川省成都市龙泉驿区柏合镇合纵路 266 号成航大厦 2 楼开放办公 B2-1 办公区</dd></div>
+          <div class="wide"><dt>经营范围</dt><dd>技术服务、技术开发、技术咨询、技术推广；智能无人飞行器销售；消防器材销售；消防技术服务；森林防火服务；紧急救援服务；智能控制系统集成；软件开发与销售；人工智能应用软件开发；物联网技术服务；生态资源监测；业务培训等（详见执照）。</dd></div>
+        </dl>
+        <p class="lic-note">企业经营信息可通过国家企业信用信息公示系统（www.gsxt.gov.cn）核验。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1044,7 +1083,7 @@ footer{background:#1C1917;color:#B8B2AC}
       <div class="cinfo rv">
         <div class="row"><div class="k">服务热线</div><div class="v" style="color:var(--red);font-size:20px">150 3084 2816<span>王天一 · 工作日 9:00 — 18:00</span></div></div>
         <div class="row"><div class="k">商务邮箱</div><div class="v">business@yuhuolingkong.com<span>方案、报价与资料索取</span></div></div>
-        <div class="row"><div class="k">公司地址</div><div class="v">四川省成都市龙泉驿区柏合街道合纵路 266 号<span>成航大厦 2 楼 B2-1</span></div></div>
+        <div class="row"><div class="k">公司地址</div><div class="v">四川省成都市龙泉驿区柏合镇合纵路 266 号<span>成航大厦 2 楼开放办公 B2-1</span></div></div>
         <div class="row"><div class="k">来访预约</div><div class="v">可预约参观样机与试飞<span>请提前两个工作日联系</span></div></div>
         <div class="wx">
           <img src="assets/wechat-qr.png" alt="微信咨询二维码">
@@ -1103,13 +1142,13 @@ footer{background:#1C1917;color:#B8B2AC}
         <h4>联系方式</h4>
         <a href="#contact">服务热线 150 3084 2816</a>
         <a href="#contact">business@yuhuolingkong.com</a>
-        <a href="#contact">四川省成都市龙泉驿区合纵路 266 号</a>
+        <a href="#contact">四川省成都市龙泉驿区柏合镇合纵路 266 号</a>
         <a href="#service">服务支持与常见问题</a>
       </div>
     </div>
     <div class="fbot">
       <span>© 2026 成都御火凌空航空科技有限公司　保留所有权利</span>
-      <span>蜀ICP备XXXXXXXX号　|　营业执照信息公示</span>
+      <span>蜀ICP备XXXXXXXX号　|　<a href="#license" style="color:inherit">营业执照信息公示</a></span>
     </div>
   </div>
 </footer>
