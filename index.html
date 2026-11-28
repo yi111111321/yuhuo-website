@@ -322,6 +322,13 @@ td small{color:var(--gray);font-size:11.5px}
 .kpi-2{grid-template-columns:1fr 1fr;display:grid;border-top:0}
 .kpi-2 li{grid-template-columns:1fr;gap:2px;border-bottom:0;padding:8px 0}
 .proof-hero.rev{grid-template-columns:.95fr 1.05fr}
+.kd{display:grid;grid-template-columns:1.18fr .82fr;gap:44px;align-items:center;margin:62px 0 22px}
+.kd-txt h3{font-size:22px;font-weight:800;margin-bottom:14px;letter-spacing:-.01em}
+.kd-txt p{font-size:14px;color:var(--gray);line-height:2;margin-bottom:10px}
+.kd-kpi{margin:0;border-top:0}
+.wide-shot{position:relative;overflow:hidden;background:#eee}
+.wide-shot img{width:100%;aspect-ratio:2.83/1;object-fit:cover;display:block}
+.wide-shot figcaption{position:absolute;left:0;bottom:0;background:rgba(255,255,255,.93);color:var(--ink);font-size:11.5px;letter-spacing:.04em;padding:8px 14px}
 .proof-hero.rev .im{order:2}
 .proof-hero .im img{aspect-ratio:4/3;object-fit:cover}
 .hl{background:rgba(200,20,31,.05);border-left:3px solid var(--red);padding:10px 14px;font-size:12.5px!important}
@@ -962,18 +969,21 @@ body>footer{background:#1C1917;color:#B8B2AC}
     </div>
 
     <!-- 康定 -->
-    <div class="proof-hero rev">
-      <div class="rv d1">
+    <div class="kd rv">
+      <div class="kd-txt">
         <h3>康定高原驻防 · 2026.7.3 — 8.6</h3>
         <p>在海拔更高的康定市开展驻防试点，覆盖炉城、榆林、姑咱等 10 个镇，构建“定点值守 + 流动巡护 + 空中巡查”的立体防控格局。</p>
         <p>重点验证高原缺氧与强乱流条件下的飞行稳定性、深谷中的抗干扰导航能力，以及隐蔽火点的排查效率。</p>
-        <ul class="kpi kpi-2">
-          <li><b>3 分钟</b><span>抵达核心火区，抢抓黄金窗口</span></li>
-          <li><b>+70%</b><span>火情处置效率提升</span></li>
-        </ul>
       </div>
-      <figure class="im rv"><img src="assets/kangding-team.jpg" alt="康定市消防救援大队试点合影"></figure>
+      <ul class="kpi kpi-2 kd-kpi">
+        <li><b>3 分钟</b><span>抵达核心火区，抢抓黄金窗口</span></li>
+        <li><b>+70%</b><span>火情处置效率提升</span></li>
+      </ul>
     </div>
+    <figure class="wide-shot rv">
+      <img src="assets/kangding-team.jpg" alt="康定市消防救援大队门口试点合影">
+      <figcaption>康定市消防救援大队 · 高原驻防试点合影</figcaption>
+    </figure>
 
     <!-- 中航中试 -->
     <h4 class="sub-h">中航（成都）无人机 · 产品中试</h4>
