@@ -50,7 +50,10 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 
 /* ---------- 轮播 ---------- */
 .hero{position:relative;height:clamp(420px,52vw,620px);overflow:hidden;background:#111}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;pointer-events:none}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none;background:#111;will-change:opacity}
+.slide .cap{transition:opacity .22s ease}
+.slide:not(.on) .cap{opacity:0}
+.slide.on .cap{opacity:1}
 .slide.on{opacity:1;pointer-events:auto}
 .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s linear}
 .slide.on img{transform:scale(1)}
@@ -353,9 +356,9 @@ td small{color:var(--gray);font-size:11.5px}
 .member .mjr{font-size:11.5px;color:var(--gray-l);margin-top:4px}
 .member p{font-size:11.5px;color:var(--gray);line-height:1.8;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);min-height:62px}
 .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.cap{background:#fff;border:1px solid var(--line);border-top:3px solid var(--red);padding:22px 22px 24px}
-.cap b{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
-.cap span{font-size:12.5px;color:var(--gray);line-height:1.85}
+.abil{background:#fff;border:1px solid var(--line);border-top:3px solid var(--red);padding:22px 22px 24px}
+.abil b{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.abil span{font-size:12.5px;color:var(--gray);line-height:1.85}
 .cap-note{font-size:12.5px;color:var(--gray);line-height:1.9;margin-top:16px}
 .advisors{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
 .adv-card{background:#fff;border:1px solid var(--line);padding:24px 26px;border-left:3px solid var(--red)}
@@ -538,9 +541,9 @@ body>footer{background:#1C1917;color:#B8B2AC}
   .shots figure{background:#fff;border:1px solid var(--line)}
   .shots figcaption{position:static;background:none;color:var(--gray);font-size:10.5px;padding:7px 8px 9px;line-height:1.5}
   .cap-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .cap{padding:16px 14px}
-  .cap b{font-size:13.5px}
-  .cap span{font-size:11px}
+  .abil{padding:16px 14px}
+  .abil b{font-size:13.5px}
+  .abil span{font-size:11px}
 
   /* 康定 / 地图 / 检测 / 构成：单栏 */
   .kd{grid-template-columns:1fr;gap:16px;margin:44px 0 14px}
@@ -1225,10 +1228,10 @@ body>footer{background:#1C1917;color:#B8B2AC}
       <p>跨领域人才梯队，覆盖结构、硬件、软件、飞控、载荷、运维与市场全链条</p>
     </div>
     <div class="cap-grid rv">
-      <div class="cap"><b>结构设计</b><span>碳纤维机体 · 孔洞式工字梁 · 铺层与受力分析</span></div>
-      <div class="cap"><b>硬件集成</b><span>板卡堆叠 · 通信与传感链路 · 可靠性测试</span></div>
-      <div class="cap"><b>软件与飞控</b><span>集群调度 · 自主导航 · 视觉识别</span></div>
-      <div class="cap"><b>市场与运营</b><span>行业调研 · 定价策略 · 交付与售后</span></div>
+      <div class="abil"><b>结构设计</b><span>碳纤维机体 · 孔洞式工字梁 · 铺层与受力分析</span></div>
+      <div class="abil"><b>硬件集成</b><span>板卡堆叠 · 通信与传感链路 · 可靠性测试</span></div>
+      <div class="abil"><b>软件与飞控</b><span>集群调度 · 自主导航 · 视觉识别</span></div>
+      <div class="abil"><b>市场与运营</b><span>行业调研 · 定价策略 · 交付与售后</span></div>
     </div>
     <p class="cap-note rv">团队现有核心成员 10 人，覆盖结构、硬件、软件、飞控、载荷、运维与市场七个方向，全部参与过样机研制与实地试飞。</p>
 
