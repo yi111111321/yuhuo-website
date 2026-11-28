@@ -352,6 +352,11 @@ td small{color:var(--gray);font-size:11.5px}
 .member .role{font-size:12px;color:var(--red);margin-top:5px;font-weight:600}
 .member .mjr{font-size:11.5px;color:var(--gray-l);margin-top:4px}
 .member p{font-size:11.5px;color:var(--gray);line-height:1.8;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);min-height:62px}
+.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cap{background:#fff;border:1px solid var(--line);border-top:3px solid var(--red);padding:22px 22px 24px}
+.cap b{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.cap span{font-size:12.5px;color:var(--gray);line-height:1.85}
+.cap-note{font-size:12.5px;color:var(--gray);line-height:1.9;margin-top:16px}
 .advisors{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
 .adv-card{background:#fff;border:1px solid var(--line);padding:24px 26px;border-left:3px solid var(--red)}
 .adv-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
@@ -530,7 +535,12 @@ body>footer{background:#1C1917;color:#B8B2AC}
 
   /* 现场照片：2 列 */
   .shots{grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 34px}
-  .shots figcaption{font-size:10px;padding:16px 8px 6px}
+  .shots figure{background:#fff;border:1px solid var(--line)}
+  .shots figcaption{position:static;background:none;color:var(--gray);font-size:10.5px;padding:7px 8px 9px;line-height:1.5}
+  .cap-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .cap{padding:16px 14px}
+  .cap b{font-size:13.5px}
+  .cap span{font-size:11px}
 
   /* 康定 / 地图 / 检测 / 构成：单栏 */
   .kd{grid-template-columns:1fr;gap:16px;margin:44px 0 14px}
@@ -1214,18 +1224,13 @@ body>footer{background:#1C1917;color:#B8B2AC}
       <div class="line"></div>
       <p>跨领域人才梯队，覆盖结构、硬件、软件、飞控、载荷、运维与市场全链条</p>
     </div>
-    <div class="team">
-      <div class="member rv"><div class="av">天</div><h3>王天一</h3><div class="role">项目负责人</div><div class="mjr">无人机应用技术</div><p>主导产品方案设计，统筹结构、载具与循环回收技术</p></div>
-      <div class="member rv d1"><div class="av">键</div><h3>魏键</h3><div class="role">飞行测试工程师</div><div class="mjr">飞行器维修工程</div><p>负责试飞调试、性能核验与故障排查</p></div>
-      <div class="member rv d2"><div class="av">宇</div><h3>江宇航</h3><div class="role">集成工程师</div><div class="mjr">电子信息工程</div><p>负责飞控盒核心控制软件架构与软硬件集成</p></div>
-      <div class="member rv d3"><div class="av">志</div><h3>毛志琳</h3><div class="role">软件工程师</div><div class="mjr">电子信息工程</div><p>负责飞控软件调试与集群协同功能实现</p></div>
-      <div class="member rv d4"><div class="av">泽</div><h3>龙泽熙</h3><div class="role">硬件工程师</div><div class="mjr">飞行器数字化制造</div><p>负责通信、传感、动力电路与结构设计</p></div>
-      <div class="member rv"><div class="av">和</div><h3>刘和志</h3><div class="role">机载载荷工程师</div><div class="mjr">飞行器数字化制造</div><p>负责火情探测载荷电路设计与可靠性测试</p></div>
-      <div class="member rv d1"><div class="av">丰</div><h3>刘丰睿</h3><div class="role">运维负责人</div><div class="mjr">无人机系统应用</div><p>搭建整机运维体系，负责设备维保与备件管理</p></div>
-      <div class="member rv d2"><div class="av">玉</div><h3>高玉林</h3><div class="role">市场运营负责人</div><div class="mjr">供应链运营</div><p>负责行业调研、品牌推广与产品定价策略</p></div>
-      <div class="member rv d3"><div class="av">雯</div><h3>马雯</h3><div class="role">财务负责人</div><div class="mjr">跨境电子商务</div><p>负责成本管理、预算编制与资金规划</p></div>
-      <div class="member rv d4"><div class="av">湧</div><h3>房湧昌</h3><div class="role">地形勘测侦察员</div><div class="mjr">退役士兵</div><p>负责野外试飞保障与山林弹道实测</p></div>
+    <div class="cap-grid rv">
+      <div class="cap"><b>结构设计</b><span>碳纤维机体 · 孔洞式工字梁 · 铺层与受力分析</span></div>
+      <div class="cap"><b>硬件集成</b><span>板卡堆叠 · 通信与传感链路 · 可靠性测试</span></div>
+      <div class="cap"><b>软件与飞控</b><span>集群调度 · 自主导航 · 视觉识别</span></div>
+      <div class="cap"><b>市场与运营</b><span>行业调研 · 定价策略 · 交付与售后</span></div>
     </div>
+    <p class="cap-note rv">团队现有核心成员 10 人，覆盖结构、硬件、软件、飞控、载荷、运维与市场七个方向，全部参与过样机研制与实地试飞。</p>
 
     <div class="advisors">
       <div class="adv-card rv">
