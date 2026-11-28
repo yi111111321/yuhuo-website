@@ -174,22 +174,21 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .app-tag{position:absolute;left:0;right:0;bottom:0;background:var(--red);color:#fff;text-align:center;font-size:14.5px;font-weight:700;padding:12px 8px;letter-spacing:.04em}
 .app-cap{padding:14px 16px 18px;font-size:12.5px;color:var(--gray);line-height:1.85;min-height:62px}
 
-/* 公司地址 */
-.loc{display:grid;grid-template-columns:.86fr 1.14fr;border:1px solid var(--line);background:#fff;margin-bottom:36px}
-.loc-map{position:relative;min-height:270px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
-  background:
-    linear-gradient(0deg,rgba(23,18,15,.035) 1px,transparent 1px) 0 0/30px 30px,
-    linear-gradient(90deg,rgba(23,18,15,.035) 1px,transparent 1px) 0 0/30px 30px,
-    linear-gradient(135deg,#F1F4F2,#E8EDEA)}
-.loc-pin{width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 9px rgba(200,20,31,.12)}
-.loc-map strong{font-size:15.5px;font-weight:700;margin-top:4px}
-.loc-map>span{font-size:12.5px;color:var(--gray)}
-.loc-open{position:absolute;right:14px;bottom:14px;background:#fff;border:1px solid var(--line);padding:8px 15px;font-size:12.5px;transition:.25s}
-.loc-open:hover{background:var(--red);color:#fff;border-color:var(--red)}
-.loc-info{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;padding:28px 32px;align-content:center}
-.loc-info>div{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:13px;align-items:baseline}
-.loc-info dt{color:var(--gray);flex:0 0 76px;font-size:12.5px;white-space:nowrap}
-.loc-info dd{margin:0;line-height:1.75}
+/* 公司地址（地图版） */
+.loc{display:grid;grid-template-columns:1.02fr .98fr;border:1px solid var(--line);background:#fff;margin-bottom:36px}
+.loc-map{position:relative;overflow:hidden;border-right:1px solid var(--line);background:#eef1ef;min-height:330px}
+.loc-img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+.loc-pin{position:absolute;width:26px;height:26px;transform:translate(-50%,-100%);pointer-events:none}
+.loc-pin::before{content:"";position:absolute;inset:0;background:var(--red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 3px 10px rgba(0,0,0,.35)}
+.loc-pin::after{content:"";position:absolute;left:9px;top:8px;width:8px;height:8px;background:#fff;border-radius:50%}
+.loc-card{position:absolute;left:16px;top:16px;width:270px;background:#fff;box-shadow:0 8px 26px -8px rgba(0,0,0,.4);padding:14px 16px;font-size:12.5px;line-height:1.8}
+.loc-card b{display:block;font-size:13.5px;font-weight:700;margin-bottom:6px}
+.loc-card p{color:#5b534c;margin:0}
+.loc-acts{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.loc-acts a{flex:1;min-width:74px;text-align:center;border:1px solid var(--line);padding:6px 8px;font-size:12px;color:var(--ink);transition:.2s}
+.loc-acts a:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.loc-copy{position:absolute;right:10px;bottom:8px;font-size:10.5px;color:#7b736b;background:rgba(255,255,255,.82);padding:2px 7px}
+.loc-info{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;padding:26px 30px;align-content:center}
 
 /* ---------- 产品 ---------- */
 .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -296,6 +295,27 @@ td small{color:var(--gray);font-size:11.5px}
 .lic-info dl>div.wide{grid-column:1/-1}
 .lic-note{font-size:11.5px;color:var(--gray-l);margin-top:14px;line-height:1.8}
 
+/* 第三方检测 / 测试构成 / 一线反馈 */
+.detect{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;border:1px solid var(--line);background:#fff;padding:20px 26px;margin-top:18px}
+.detect>div{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px;align-items:baseline}
+.detect>div:last-child,.detect>div:nth-last-child(2){border-bottom:0}
+.detect dt{color:var(--gray);flex:0 0 76px;font-size:12.5px;white-space:nowrap}
+.detect dd{margin:0;line-height:1.7}
+.compose{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.compose>div{background:#fff;border:1px solid var(--line);border-left:3px solid var(--red);padding:14px 18px;font-size:12.5px;color:var(--gray);line-height:1.85}
+.compose b{display:block;color:var(--ink);font-size:13px;margin-bottom:4px}
+.fb{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.fb-card{background:#fff;border:1px solid var(--line);padding:24px 26px}
+.fb-card header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px}
+.fb-card header b{display:block;font-size:15.5px;font-weight:700}
+.fb-card header span{display:block;font-size:12px;color:var(--red);margin-top:5px;letter-spacing:.04em}
+.fb-sub{font-size:12.5px;color:var(--gray);line-height:1.9;margin-bottom:12px}
+.fb-card ul{list-style:none}
+.fb-card li{font-size:12.5px;color:var(--gray);line-height:1.9;padding:6px 0 6px 16px;position:relative}
+.fb-card li::before{content:"";position:absolute;left:0;top:15px;width:5px;height:5px;background:var(--red)}
+.fb-card li b{color:var(--ink);margin-right:6px}
+.fb-card footer{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--gray-l)}
+
 /* ---------- 团队 ---------- */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .member{background:#fff;border:1px solid var(--line);padding:24px 18px;text-align:center;transition:.3s}
@@ -377,7 +397,7 @@ details.qa p{font-size:13px;color:var(--gray);line-height:2;padding:0 20px 18px 
 .form .fine{font-size:11.5px;color:var(--gray-l);text-align:center;margin-top:12px}
 
 /* ---------- 页脚 ---------- */
-footer{background:#1C1917;color:#B8B2AC}
+body>footer{background:#1C1917;color:#B8B2AC}
 .fmain{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding:52px 0 44px}
 .fmain .brand b{color:#fff;font-size:17px;letter-spacing:.1em;display:block}
 .fmain .brand span{font-size:8.5px;letter-spacing:.26em;color:#6C6763;display:block;margin-top:4px}
@@ -924,6 +944,14 @@ footer{background:#1C1917;color:#B8B2AC}
     </div>
     <p class="tbl-note">注：数据为每百架次飞行测试统计口径，由凌空天行半实物仿真联合实验室与低空试飞调试场的第三方检测数据构成。</p>
 
+    <h4 class="sub-h">第三方检测</h4>
+    <div class="detect rv">
+      <div><dt>检测机构</dt><dd>四川凌空天行科技有限公司</dd></div>
+      <div><dt>检测时间</dt><dd>2025.9.3 — 2025.10.9</dd></div>
+      <div><dt>受检产品</dt><dd>可回收灭火巡飞器 2.0</dd></div>
+      <div><dt>测试依据</dt><dd>《可回收灭火巡飞器性能测试验证报告》</dd></div>
+    </div>
+
     <h4 class="sub-h">测试投入</h4>
     <div class="nums rv" style="margin-top:18px">
       <div><div class="n">150<small>+</small></div><div class="t">半实物仿真联合实验室</div></div>
@@ -931,21 +959,40 @@ footer{background:#1C1917;color:#B8B2AC}
       <div><div class="n">60<small>+</small></div><div class="t">数字仿真推演测试</div></div>
       <div><div class="n">70<small>+</small></div><div class="t">投弹打击精度测试</div></div>
     </div>
+    <div class="compose rv">
+      <div><b>半实物仿真联合实验室</b>数字仿真推演 60+ · 半实物闭环仿真 50+ · 电气与飞控台架 40+</div>
+      <div><b>低空试飞调试场</b>巡航飞行性能 60+ · 投弹打击精度 70+ · 复杂环境综合任务 40+</div>
+    </div>
 
     <h4 class="sub-h">一线单位反馈</h4>
-    <div class="quotes">
-      <div class="quote rv">
-        <p>该设备可在 3 分钟内完成部署并精准锁定火点，目标识别率达 98% 以上，打击精度优于 1 米，能够实现精准投弹灭火与伞降回收复用。</p>
-        <div class="from"><b>中航（成都）无人机系统股份有限公司</b>《御火凌空产品试点证明》· 2026.09</div>
-      </div>
-      <div class="quote rv d1">
-        <p>试点期间完成青城山、龙泉山等重点林区靠前驻防任务，火情识别与应急响应效率显著提升，可替代人员进入高危环境。</p>
-        <div class="from"><b>成都消防救援机动支队成都大队</b>试点应用总结 · 2026.04–05</div>
-      </div>
-      <div class="quote rv d2">
-        <p>克服高原缺氧与强乱流，高海拔稳定飞行；3 分钟抵达核心区，深谷信号不丢失，处置效率提升约 70%。</p>
-        <div class="from"><b>康定市消防救援大队</b>试点应用总结 · 2026.07–08</div>
-      </div>
+    <div class="fb">
+      <article class="fb-card rv">
+        <header><b>成都消防救援机动支队成都大队</b><span>试用时间 2026.4.3 — 2026.5.3</span></header>
+        <p class="fb-sub">承担森林草原火灾、洪涝与地震地质灾害等应急救援任务，在青城山、龙泉山等重点林区靠前驻防。</p>
+        <ul>
+          <li><b>极速响应</b>50 m/s 巡航、30 km 半径，极速抵达火场</li>
+          <li><b>精准打击</b>≤1 m 投弹，可灭地表火与树冠火，效率提升约 3 倍</li>
+          <li><b>远程避险</b>远程操控作业，替代人员深入高危环境</li>
+          <li><b>地形适配</b>抗风稳飞、无惧沟壑，从容应对山地乱流</li>
+        </ul>
+        <footer>已完成试点验收 · 出具产品应用证明</footer>
+      </article>
+      <article class="fb-card rv d1">
+        <header><b>康定市消防救援大队</b><span>试用时间 2026.7.3 — 2026.8.6</span></header>
+        <p class="fb-sub">构建“定点值守 + 流动巡护 + 空中巡查”立体防控格局，覆盖炉城、榆林、姑咱等 10 个镇。</p>
+        <ul>
+          <li><b>高原适配</b>克服高原缺氧与乱流，高海拔稳定飞行</li>
+          <li><b>极速响应</b>3 分钟抵达核心区，抢抓灭火黄金窗口</li>
+          <li><b>信号稳定</b>强抗干扰导航，深谷中信号不丢失</li>
+          <li><b>协同侦察</b>实时回传数据、排查隐蔽火点，处置效率提升约 70%</li>
+        </ul>
+        <footer>已完成高原驻防试点 · 出具产品应用证明</footer>
+      </article>
+    </div>
+
+    <div class="quote rv" style="margin-top:28px">
+      <p>“该设备可在 3 分钟内完成部署并精准锁定火点，目标识别率达 98% 以上，打击精度优于 1 米，能够实现精准投弹灭火与伞降回收复用。”</p>
+      <div class="from"><b>中航（成都）无人机系统股份有限公司</b>《御火凌空产品试点证明》· 2026.09</div>
     </div>
   </div>
 </section>
@@ -1134,10 +1181,19 @@ footer{background:#1C1917;color:#B8B2AC}
     </div>
     <div class="loc rv">
       <div class="loc-map">
-        <div class="loc-pin"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></div>
-        <strong>成都 · 龙泉驿</strong>
-        <span>柏合镇合纵路 266 号 成航大厦 2F</span>
-        <a class="loc-open" href="https://map.baidu.com/search/%E6%88%90%E9%83%BD%E5%B8%82%E9%BE%99%E6%B3%89%E9%A9%BF%E5%8C%BA%E6%9F%8F%E5%90%88%E9%95%87%E5%90%88%E7%BA%B5%E8%B7%AF266%E5%8F%B7" target="_blank" rel="noopener">在地图中打开 ↗</a>
+        <img class="loc-img" src="assets/map-location.jpg" alt="公司位置地图：成都市龙泉驿区柏合镇合纵路 266 号">
+        <span class="loc-pin" style="left:53.8%;top:50%"></span>
+        <div class="loc-card">
+          <b>成都御火凌空航空科技有限公司</b>
+          <p>地址：四川省成都市龙泉驿区柏合镇合纵路 266 号 成航大厦 2F</p>
+          <p>电话：150 3084 2816</p>
+          <div class="loc-acts">
+            <a href="https://uri.amap.com/marker?position=104.245273,30.530653&amp;name=%E5%BE%A1%E7%81%AB%E5%87%8C%E7%A9%BA&amp;src=yuhuo&amp;coordinate=gaode" target="_blank" rel="noopener">在附近找</a>
+            <a href="https://uri.amap.com/navigation?to=104.245273,30.530653,%E5%BE%A1%E7%81%AB%E5%87%8C%E7%A9%BA&amp;mode=car&amp;src=yuhuo&amp;coordinate=gaode" target="_blank" rel="noopener">到这里去</a>
+            <a href="https://map.baidu.com/search/%E6%88%90%E9%83%BD%E5%B8%82%E9%BE%99%E6%B3%89%E9%A9%BF%E5%8C%BA%E6%9F%8F%E5%90%88%E9%95%87%E5%90%88%E7%BA%B5%E8%B7%AF266%E5%8F%B7" target="_blank" rel="noopener">百度地图</a>
+          </div>
+        </div>
+        <span class="loc-copy">地图数据 © 高德地图</span>
       </div>
       <div class="loc-info">
         <div><dt>公司地址</dt><dd>四川省成都市龙泉驿区柏合镇合纵路 266 号 成航大厦 2 楼</dd></div>
