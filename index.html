@@ -74,6 +74,25 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .arrow:hover{background:var(--red);border-color:var(--red)}
 .arrow.prev{left:24px}.arrow.next{right:24px}
 
+/* 首屏·产品主图版 */
+.slide.light{background:linear-gradient(135deg,#FBF7F1 0%,#F3EDE3 52%,#EBE1D2 100%)}
+.slide.light::after{display:none}
+.s1{display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center}
+.slide.light .cap{color:var(--ink)}
+.slide.light .en{color:#9C9186;opacity:1}
+.slide.light h1{color:var(--ink)}
+.slide.light h1 em{color:var(--red)}
+.slide.light p{color:#5E554C;opacity:1}
+.s1-prod{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.s1-cap{font-size:12px;color:#8B8074;letter-spacing:.05em}
+.s1-prod img{max-height:clamp(300px,41vw,520px);width:auto;max-width:100%;filter:drop-shadow(0 26px 46px rgba(70,46,20,.22))}
+.slide.light .btn-ghost{border-color:rgba(31,27,24,.28);color:var(--ink)}
+.slide.light .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hero.light-slide .dots button{background:rgba(31,27,24,.22)}
+.hero.light-slide .dots button.on{background:var(--red)}
+.hero.light-slide .arrow{background:rgba(255,255,255,.8);border-color:rgba(31,27,24,.12);color:var(--ink)}
+.hero.light-slide .arrow:hover{background:var(--red);border-color:var(--red);color:#fff}
+
 /* ---------- 通用 ---------- */
 .sec{padding:76px 0}
 .sec.gray{background:var(--bg2)}
@@ -408,6 +427,9 @@ footer{background:#1C1917;color:#B8B2AC}
   .slide::after{background:linear-gradient(180deg,rgba(12,8,8,.55) 0%,rgba(12,8,8,.78) 45%,rgba(12,8,8,.86) 100%)}
   .slide h1{font-size:26px}
   .slide p{font-size:13.5px}
+  .s1{grid-template-columns:1fr;gap:14px}
+  .s1-prod img{max-height:230px}
+  .slide.light .cap{padding-top:34px}
   .arrow{display:none}
   .topbar .l span:nth-child(2),.topbar .r a{display:none}
   .topbar .wrap{justify-content:center}
@@ -480,13 +502,18 @@ footer{background:#1C1917;color:#B8B2AC}
 
 <!-- ============ 轮播 ============ -->
 <section class="hero" id="top">
-  <div class="slide on">
-    <img src="assets/work-assembly.jpg" alt="御火凌空 2.0 在野外试飞场完成整备">
-    <div class="cap"><div class="wrap">
-      <div class="en">Forest Fire · Emergency Equipment</div>
-      <h1>黄金三分钟，<em>不再等。</em></h1>
-      <p>国内率先实现可回收、可集群、可量产的森林灭火巡飞器。单兵弹射、发射即到，三分钟抵达火场。</p>
-      <div class="btns"><a href="#contact" class="btn btn-red">获取报价与方案</a><a href="#proof" class="btn btn-ghost">查看试飞实录</a></div>
+  <div class="slide on light">
+    <div class="cap"><div class="wrap s1">
+      <div class="s1-txt">
+        <div class="en">Forest Fire · Emergency Equipment</div>
+        <h1>黄金三分钟，<em>不再等。</em></h1>
+        <p>国内率先实现可回收、可集群、可量产的森林灭火巡飞器。单兵弹射、发射即到，三分钟抵达火场。</p>
+        <div class="btns"><a href="#contact" class="btn btn-red">获取报价与方案</a><a href="#proof" class="btn btn-ghost">查看试飞实录</a></div>
+      </div>
+      <div class="s1-prod">
+        <img src="assets/product-system.png" alt="御火凌空 2.0 整机系统：巡飞器、发射装置与地面控制站">
+        <span class="s1-cap">御火凌空 2.0 · 巡飞器 + 发射装置 + 地面控制站</span>
+      </div>
     </div></div>
   </div>
   <div class="slide">
@@ -1220,6 +1247,7 @@ function go(i){
   cur = (i + slides.length) % slides.length;
   slides.forEach(function(s, k){ s.classList.toggle('on', k === cur); });
   dots.forEach(function(d, k){ d.classList.toggle('on', k === cur); });
+  document.querySelector('.hero').classList.toggle('light-slide', slides[cur].classList.contains('light'));
   restart();
 }
 function next(){ go(cur + 1); }
