@@ -497,6 +497,97 @@ body>footer{background:#1C1917;color:#B8B2AC}
 .mnav{display:none;position:fixed;left:0;right:0;top:118px;z-index:99;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -22px rgba(0,0,0,.4);padding:6px 24px 14px;max-height:calc(100vh - 118px);overflow:auto}
 .mnav a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
 .mnav a:last-child{border-bottom:0;color:var(--red);font-weight:700}
+/* ============ 移动端专项适配 ============ */
+@media (max-width:720px){
+  .sec{padding:46px 0}
+  .sec-hd{margin-bottom:32px}
+  .sec-hd p{font-size:13px;line-height:1.85}
+  .hero{height:500px}
+  .slide.light .cap{padding-top:26px}
+  .s1-prod img{max-height:190px}
+  .s1-prod{gap:10px}
+  .s1-cap{font-size:11px}
+
+  /* 四宫格：2×2，不再竖排四张 */
+  .adv{grid-template-columns:1fr 1fr;gap:12px}
+  .adv .item{padding:22px 14px 20px}
+  .adv .ico{width:54px;height:54px;margin-bottom:12px}
+  .adv .ico svg{width:26px;height:26px}
+  .adv h3{font-size:15px;margin-bottom:6px}
+  .adv p{font-size:11.5px;line-height:1.75}
+  .adv .idx{left:10px;top:9px;font-size:10.5px}
+
+  /* 痛点：三栏改单栏 */
+  .pains{grid-template-columns:1fr;gap:14px}
+  .pain{padding:22px 20px}
+  .pain h3{font-size:16px}
+  .pain p{font-size:12.5px}
+
+  /* 应用场景：2 列 */
+  .apps{grid-template-columns:1fr 1fr;gap:12px}
+  .app-tag{font-size:12px;padding:8px 4px;letter-spacing:0}
+  .app-cap{font-size:11px;line-height:1.7;padding:10px 12px 12px;min-height:0}
+
+  /* 现场照片：2 列 */
+  .shots{grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 34px}
+  .shots figcaption{font-size:10px;padding:16px 8px 6px}
+
+  /* 康定 / 地图 / 检测 / 构成：单栏 */
+  .kd{grid-template-columns:1fr;gap:16px;margin:44px 0 14px}
+  .kd-txt h3{font-size:19px}
+  .kd-txt p{font-size:13px}
+  .kpi-2{grid-template-columns:1fr 1fr;gap:8px}
+
+  .loc{grid-template-columns:1fr}
+  .loc-map{min-height:230px;border-right:0;border-bottom:1px solid var(--line)}
+  .loc-card{position:static;width:auto;margin:12px;box-shadow:0 6px 18px -10px rgba(0,0,0,.4)}
+  .loc-img{position:absolute;inset:0;height:100%}
+  .loc-map{padding-top:0}
+  .loc-info{grid-template-columns:1fr;padding:18px 20px;gap:0}
+  .detect{grid-template-columns:1fr;padding:16px 18px;gap:0}
+  .compose{grid-template-columns:1fr;gap:12px}
+
+  /* 一线反馈：单栏 */
+  .fb{grid-template-columns:1fr;gap:16px}
+  .fb-card{padding:20px 18px}
+  .fb-card header b{font-size:14.5px}
+
+  /* 指标行 */
+  .kpi li{grid-template-columns:64px 1fr;gap:10px}
+  .kpi li b{font-size:16px}
+
+  /* 宽幅图 */
+  .wide-shot img{aspect-ratio:16/9}
+  .wide-shot figcaption{font-size:10.5px;padding:6px 10px}
+
+  /* 表格：可横滑 + 小字号 */
+  table{min-width:520px;font-size:12px}
+  th,td{padding:10px 12px}
+  .table-wrap{position:relative}
+
+  /* 团队：2 列 */
+  .team{grid-template-columns:1fr 1fr;gap:10px}
+  .member{padding:16px 10px}
+  .member .av{width:52px;height:52px;font-size:20px;margin-bottom:10px}
+  .member h3{font-size:13.5px}
+  .member .role{font-size:11px}
+  .member .mjr{font-size:10.5px}
+  .member p{font-size:10.5px;min-height:0;margin-top:8px;padding-top:8px}
+
+  /* 知识产权清单 */
+  .ip-list li{grid-template-columns:auto 1fr;gap:8px}
+  .ip-list .code{grid-column:2;white-space:normal;font-size:10px;color:var(--gray-l)}
+
+  /* 页脚 */
+  .fgrid{padding-bottom:30px}
+  .fbot{font-size:11px}
+}
+@media (max-width:359px){
+  .adv,.apps,.shots,.team,.partners{grid-template-columns:1fr}
+  .hero{height:460px}
+  .s1-prod img{max-height:150px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *{transition-duration:.001s!important;animation-duration:.001s!important}
   .js .rv{opacity:1!important;transform:none!important}
