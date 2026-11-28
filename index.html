@@ -316,6 +316,26 @@ td small{color:var(--gray);font-size:11.5px}
 .fb-card li b{color:var(--ink);margin-right:6px}
 .fb-card footer{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--gray-l)}
 
+.kpi{list-style:none;margin:16px 0 14px;border-top:1px solid var(--line)}
+.kpi li{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:12.5px;color:var(--gray)}
+.kpi li b{font-size:19px;color:var(--red);font-weight:800;letter-spacing:-.01em}
+.kpi-2{grid-template-columns:1fr 1fr;display:grid;border-top:0}
+.kpi-2 li{grid-template-columns:1fr;gap:2px;border-bottom:0;padding:8px 0}
+.proof-hero.rev{grid-template-columns:.95fr 1.05fr}
+.proof-hero.rev .im{order:2}
+.proof-hero .im img{aspect-ratio:4/3;object-fit:cover}
+.hl{background:rgba(200,20,31,.05);border-left:3px solid var(--red);padding:10px 14px;font-size:12.5px!important}
+.inline-link{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--red);border-bottom:1px solid rgba(200,20,31,.35);padding-bottom:2px}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 46px}
+.shots figure{position:relative;overflow:hidden;background:#eee}
+.shots img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1s}
+.shots figure:hover img{transform:scale(1.05)}
+.shots figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(15,10,8,.78));color:#fff;font-size:11.5px;padding:26px 12px 9px;letter-spacing:.02em}
+.fb-proof{display:flex;gap:12px;align-items:center;margin-top:14px;padding:10px;border:1px solid var(--line);background:var(--bg3);transition:.25s}
+.fb-proof:hover{border-color:var(--red)}
+.fb-proof img{width:56px;height:74px;object-fit:cover;object-position:top center;flex:0 0 56px;border:1px solid var(--line)}
+.fb-proof span{font-size:12px;color:var(--ink-2)}
+
 /* ---------- 团队 ---------- */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .member{background:#fff;border:1px solid var(--line);padding:24px 18px;text-align:center;transition:.3s}
@@ -724,7 +744,7 @@ body>footer{background:#1C1917;color:#B8B2AC}
       </article>
       <article class="prod rv d1">
         <span class="flag gift">随产品附赠</span>
-        <div class="im"><img src="assets/work-assembly.jpg" alt="发射筒与巡飞器整备"></div>
+        <div class="im"><img src="assets/product-launcher.jpg" alt="筒式发射装置实拍"></div>
         <div class="tx">
           <h3>筒式发射装置</h3>
           <p>每套巡飞器随附发射筒，高压气体弹射离筒、展翼秒级响应，单兵可携、车辆可载，不单独收费。</p>
@@ -733,7 +753,7 @@ body>footer{background:#1C1917;color:#B8B2AC}
       </article>
       <article class="prod rv d2">
         <span class="flag opt">选配 · 2,000 元/台</span>
-        <div class="im"><img src="assets/firefighter.jpg" alt="地面控制站与数据链路终端操作"></div>
+        <div class="im"><img src="assets/product-station.jpg" alt="地面控制站现场操作"></div>
         <div class="tx">
           <h3>地面控制站（选配）</h3>
           <p>非必需。不做额外采购时，可直接将<strong>数据链路终端</strong>插入笔记本使用，同样可完成航线规划与任务监控。</p>
@@ -914,46 +934,60 @@ body>footer{background:#1C1917;color:#B8B2AC}
     <div class="sec-hd rv">
       <h2>实证案例</h2>
       <div class="line"></div>
-      <p>320+ 次第三方实测、龙泉驿与康定两轮实地验证、四家一线单位试点验收</p>
+      <p>320+ 次第三方实测 · 龙泉驿与康定两轮实地验证 · 四家一线单位试点验收</p>
     </div>
 
+    <!-- 龙泉驿 -->
     <div class="proof-hero">
-      <div class="im rv"><img src="assets/team-field.jpg" alt="团队在龙泉山完成森林防灭火实战演练"></div>
+      <figure class="im rv"><img src="assets/test-battle.jpg" alt="龙泉山实战现场：3 架巡飞器在烟火中协同投放"></figure>
       <div class="rv d1">
-        <h3>龙泉驿实地测试 · 高原驻防验证</h3>
-        <p>2025 年 10 月至 11 月，团队在成都市龙泉驿区高石岩管护站指定试飞区完成实地测试：6 级风环境下稳定飞行，火情识别成功率 92%，有效灭火区域命中率 84%，伞降回收成功率 100%。</p>
-        <p>测试期间（10 月 24 日）团队无偿部署 3 架巡飞器用于林区防灭火；次年 4 月 23 日突发火情中，部署的巡飞器参与处置，效果突出，事后获山泉镇人民政府感谢信。</p>
-        <p>2026 年 7 月至 8 月，设备在海拔更高的康定市开展驻防试点，覆盖炉城、榆林、姑咱等 10 个镇，验证高原缺氧与强乱流条件下的飞行稳定性与火情识别能力。</p>
-        <p>2026 年 8 月至 9 月，设备在中航（成都）无人机系统股份有限公司完成产品中试，特定航线巡航测试的识别准确率、作业半径与巡航速度均达到设计指标。</p>
+        <h3>龙泉驿实地测试 · 2025.10.23 — 11.21</h3>
+        <p>测试地点：成都市龙泉驿区高石岩管护站指定试飞区；测试产品：可回收灭火巡飞器 2.0。在山地林区与强风乱流的复杂环境下，完成四项关键指标测试。</p>
+        <ul class="kpi">
+          <li><b>6 级</b><span>山地复杂地形抗风性能：强风环境下稳定飞行作业</span></li>
+          <li><b>92%</b><span>定位与模拟火情侦察精度：火情识别成功率</span></li>
+          <li><b>84%</b><span>模拟火点灭火投放性能：有效灭火区域命中率</span></li>
+          <li><b>100%</b><span>伞降回收可靠性：回收成功率</span></li>
+        </ul>
+        <p class="hl">2025 年 10 月 24 日，团队无偿部署 3 架巡飞器协助林区防灭火。次年 4 月 23 日突发火情中，这 3 架巡飞器参与灭火，处置效果突出，山泉镇人民政府出具感谢信。</p>
+        <a class="inline-link" href="assets/cert-thanks.jpg" target="_blank" rel="noopener">查看山泉镇人民政府感谢信 ↗</a>
       </div>
     </div>
 
-    <h4 class="sub-h">御火凌空 2.0 与初代机型实测对比</h4>
-    <div class="table-wrap rv">
-      <table>
-        <thead><tr><th>指标</th><th>初代挂载机型</th><th>御火凌空 2.0</th><th>提升幅度</th></tr></thead>
-        <tbody>
-          <tr><td>打击精度</td><td>≥ 5 m</td><td>≤ 1 m</td><td>精度提升 5 倍</td></tr>
-          <tr><td>巡航速度</td><td>15 m/s</td><td>50 m/s</td><td>提升 3.3 倍</td></tr>
-          <tr><td>最大作业半径</td><td>8 km</td><td>30 km</td><td>提升 3.75 倍</td></tr>
-          <tr><td>目标识别准确率</td><td>85%</td><td>&gt; 99%</td><td>提升 14 个百分点</td></tr>
-          <tr><td>抗风等级</td><td>4 级</td><td>6 级</td><td>提升 2 级</td></tr>
-          <tr><td>任务成功率</td><td>72%</td><td>&gt; 95%</td><td>提升 23 个百分点</td></tr>
-        </tbody>
-      </table>
+    <div class="shots rv">
+      <figure><img src="assets/test-setup.jpg" alt="架设发射装置"><figcaption>架设发射装置</figcaption></figure>
+      <figure><img src="assets/test-debug.jpg" alt="飞前调试与通信链路检查"><figcaption>飞前调试 · 通信链路检查</figcaption></figure>
+      <figure><img src="assets/test-battle.jpg" alt="实战现场投放"><figcaption>实战现场 · 多机协同投放</figcaption></figure>
+      <figure><img src="assets/test-screen.jpg" alt="探测系统画面"><figcaption>探测系统画面 · 热成像与航线</figcaption></figure>
     </div>
-    <p class="tbl-note">注：数据为每百架次飞行测试统计口径，由凌空天行半实物仿真联合实验室与低空试飞调试场的第三方检测数据构成。</p>
 
-    <h4 class="sub-h">第三方检测</h4>
+    <!-- 康定 -->
+    <div class="proof-hero rev">
+      <div class="rv d1">
+        <h3>康定高原驻防 · 2026.7.3 — 8.6</h3>
+        <p>在海拔更高的康定市开展驻防试点，覆盖炉城、榆林、姑咱等 10 个镇，构建“定点值守 + 流动巡护 + 空中巡查”的立体防控格局。</p>
+        <p>重点验证高原缺氧与强乱流条件下的飞行稳定性、深谷中的抗干扰导航能力，以及隐蔽火点的排查效率。</p>
+        <ul class="kpi kpi-2">
+          <li><b>3 分钟</b><span>抵达核心火区，抢抓黄金窗口</span></li>
+          <li><b>+70%</b><span>火情处置效率提升</span></li>
+        </ul>
+      </div>
+      <figure class="im rv"><img src="assets/kangding-team.jpg" alt="康定市消防救援大队试点合影"></figure>
+    </div>
+
+    <!-- 中航中试 -->
+    <h4 class="sub-h">中航（成都）无人机 · 产品中试</h4>
     <div class="detect rv">
       <div><dt>检测机构</dt><dd>四川凌空天行科技有限公司</dd></div>
       <div><dt>检测时间</dt><dd>2025.9.3 — 2025.10.9</dd></div>
       <div><dt>受检产品</dt><dd>可回收灭火巡飞器 2.0</dd></div>
       <div><dt>测试依据</dt><dd>《可回收灭火巡飞器性能测试验证报告》</dd></div>
     </div>
+    <p class="tbl-note">2026 年 8 月至 9 月，设备在中航（成都）无人机系统股份有限公司完成特定航线巡航中试，识别准确率 ≥99%、作业半径 30 公里、巡航速度 50 m/s，均达到设计指标。</p>
 
+    <!-- 测试投入 -->
     <h4 class="sub-h">测试投入</h4>
-    <div class="nums rv" style="margin-top:18px">
+    <div class="nums rv">
       <div><div class="n">150<small>+</small></div><div class="t">半实物仿真联合实验室</div></div>
       <div><div class="n">170<small>+</small></div><div class="t">低空试飞调试场</div></div>
       <div><div class="n">60<small>+</small></div><div class="t">数字仿真推演测试</div></div>
@@ -964,6 +998,7 @@ body>footer{background:#1C1917;color:#B8B2AC}
       <div><b>低空试飞调试场</b>巡航飞行性能 60+ · 投弹打击精度 70+ · 复杂环境综合任务 40+</div>
     </div>
 
+    <!-- 一线单位反馈 -->
     <h4 class="sub-h">一线单位反馈</h4>
     <div class="fb">
       <article class="fb-card rv">
@@ -975,7 +1010,11 @@ body>footer{background:#1C1917;color:#B8B2AC}
           <li><b>远程避险</b>远程操控作业，替代人员深入高危环境</li>
           <li><b>地形适配</b>抗风稳飞、无惧沟壑，从容应对山地乱流</li>
         </ul>
-        <footer>已完成试点验收 · 出具产品应用证明</footer>
+        <a class="fb-proof" href="assets/proof-chengdu.jpg" target="_blank" rel="noopener">
+          <img src="assets/proof-chengdu.jpg" alt="成都大队产品应用证明">
+          <span>产品应用证明（点击查看）</span>
+        </a>
+        <footer>已完成试点验收</footer>
       </article>
       <article class="fb-card rv d1">
         <header><b>康定市消防救援大队</b><span>试用时间 2026.7.3 — 2026.8.6</span></header>
@@ -986,7 +1025,11 @@ body>footer{background:#1C1917;color:#B8B2AC}
           <li><b>信号稳定</b>强抗干扰导航，深谷中信号不丢失</li>
           <li><b>协同侦察</b>实时回传数据、排查隐蔽火点，处置效率提升约 70%</li>
         </ul>
-        <footer>已完成高原驻防试点 · 出具产品应用证明</footer>
+        <a class="fb-proof" href="assets/proof-kangding.jpg" target="_blank" rel="noopener">
+          <img src="assets/proof-kangding.jpg" alt="康定大队产品应用证明">
+          <span>产品应用证明（点击查看）</span>
+        </a>
+        <footer>已完成高原驻防试点验收</footer>
       </article>
     </div>
 
