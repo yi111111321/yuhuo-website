@@ -145,6 +145,33 @@ header.sticky{box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .scene h3{font-size:16px;font-weight:700;margin-bottom:10px}
 .scene p{font-size:12.5px;color:var(--gray);line-height:1.95}
 
+/* 行业应用式图片网格 */
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.app{display:block;background:#fff;border:1px solid var(--line);transition:.35s;overflow:hidden}
+.app:hover{transform:translateY(-5px);box-shadow:0 20px 44px -26px rgba(0,0,0,.45)}
+.app-im{position:relative;overflow:hidden;aspect-ratio:4/3;background:#eee}
+.app-im img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.app:hover .app-im img{transform:scale(1.06)}
+.app-tag{position:absolute;left:0;right:0;bottom:0;background:var(--red);color:#fff;text-align:center;font-size:14.5px;font-weight:700;padding:12px 8px;letter-spacing:.04em}
+.app-cap{padding:14px 16px 18px;font-size:12.5px;color:var(--gray);line-height:1.85;min-height:62px}
+
+/* 公司地址 */
+.loc{display:grid;grid-template-columns:.86fr 1.14fr;border:1px solid var(--line);background:#fff;margin-bottom:36px}
+.loc-map{position:relative;min-height:270px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  background:
+    linear-gradient(0deg,rgba(23,18,15,.035) 1px,transparent 1px) 0 0/30px 30px,
+    linear-gradient(90deg,rgba(23,18,15,.035) 1px,transparent 1px) 0 0/30px 30px,
+    linear-gradient(135deg,#F1F4F2,#E8EDEA)}
+.loc-pin{width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 9px rgba(200,20,31,.12)}
+.loc-map strong{font-size:15.5px;font-weight:700;margin-top:4px}
+.loc-map>span{font-size:12.5px;color:var(--gray)}
+.loc-open{position:absolute;right:14px;bottom:14px;background:#fff;border:1px solid var(--line);padding:8px 15px;font-size:12.5px;transition:.25s}
+.loc-open:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.loc-info{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;padding:28px 32px;align-content:center}
+.loc-info>div{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:13px;align-items:baseline}
+.loc-info dt{color:var(--gray);flex:0 0 76px;font-size:12.5px;white-space:nowrap}
+.loc-info dd{margin:0;line-height:1.75}
+
 /* ---------- 产品 ---------- */
 .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .prod{background:#fff;border:1px solid var(--line);overflow:hidden;transition:.35s}
@@ -309,6 +336,9 @@ details.qa p{font-size:13px;color:var(--gray);line-height:2;padding:0 20px 18px 
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .cinfo .row{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
 .cinfo .row:first-of-type{border-top:1px solid var(--line)}
+.visit{margin-top:20px;background:#fff;border:1px solid var(--line);padding:22px 24px}
+.visit b{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.visit p{font-size:12.5px;color:var(--gray);line-height:1.95}
 .cinfo .k{font-size:13px;color:var(--gray);flex:0 0 74px;letter-spacing:.08em}
 .cinfo .v{font-size:14.5px;font-weight:600}
 .cinfo .v span{display:block;font-weight:400;font-size:12.5px;color:var(--gray);margin-top:3px}
@@ -606,27 +636,23 @@ footer{background:#1C1917;color:#B8B2AC}
       <div class="line"></div>
       <p>从深山密林到丘陵沟壑，从草场平原到偏远村镇，解决的是"到不了"和"来不及"</p>
     </div>
-    <div class="scenes rv">
-      <div class="scene">
-        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="m3 20 6-9 4 5 3-4 5 8H3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 11 9 7l2 3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <h3>山地森林火灾</h3>
-        <p>突破地形限制，精准锁定深山密林火情，提升野外火灾处置效率</p>
-      </div>
-      <div class="scene">
-        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M2 17c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 12c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <h3>丘陵沟壑火灾</h3>
-        <p>穿梭沟壑地形，多点布防阻断火势，大幅缩短抵达火场时间</p>
-      </div>
-      <div class="scene">
-        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 21V9M12 9c0-3 2-5 5-5 0 3-2 5-5 5ZM12 13c0-3-2-5-5-5 0 3 2 5 5 5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <h3>草场平原火灾</h3>
-        <p>快速远程布控，及时遏制蔓延，保护草原生态与农牧设施</p>
-      </div>
-      <div class="scene">
-        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 21v-6h5v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <h3>偏远村镇火灾</h3>
-        <p>突破长距离限制，快速到达高风险区域，及时遏制火势扩散</p>
-      </div>
+    <div class="apps">
+      <a class="app rv" href="#contact">
+        <div class="app-im"><img src="assets/team-field.jpg" alt="山地森林火灾应用场景"><span class="app-tag">山地森林火灾</span></div>
+        <div class="app-cap">突破地形限制，精准锁定深山密林火情，提升野外处置效率</div>
+      </a>
+      <a class="app rv d1" href="#contact">
+        <div class="app-im"><img src="assets/hero-field.jpg" alt="丘陵沟壑火灾应用场景"><span class="app-tag">丘陵沟壑火灾</span></div>
+        <div class="app-cap">穿梭沟壑地形，多点布防阻断火势，大幅缩短抵达火场时间</div>
+      </a>
+      <a class="app rv d2" href="#contact">
+        <div class="app-im"><img src="assets/hero-rail.jpg" alt="草场平原火灾应用场景" style="object-position:50% 60%"><span class="app-tag">草场平原火灾</span></div>
+        <div class="app-cap">快速远程布控，及时遏制蔓延，保护草原生态与农牧设施</div>
+      </a>
+      <a class="app rv d3" href="#contact">
+        <div class="app-im"><img src="assets/firefighter.jpg" alt="偏远村镇火灾应用场景"><span class="app-tag">偏远村镇火灾</span></div>
+        <div class="app-cap">突破长距离限制，快速到达高风险区域，及时遏制火势扩散</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1079,15 +1105,31 @@ footer{background:#1C1917;color:#B8B2AC}
       <div class="line"></div>
       <p>留下单位与场景，48 小时内回复，并提供同类地形条件下的试点数据</p>
     </div>
+    <div class="loc rv">
+      <div class="loc-map">
+        <div class="loc-pin"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <strong>成都 · 龙泉驿</strong>
+        <span>柏合镇合纵路 266 号 成航大厦 2F</span>
+        <a class="loc-open" href="https://map.baidu.com/search/%E6%88%90%E9%83%BD%E5%B8%82%E9%BE%99%E6%B3%89%E9%A9%BF%E5%8C%BA%E6%9F%8F%E5%90%88%E9%95%87%E5%90%88%E7%BA%B5%E8%B7%AF266%E5%8F%B7" target="_blank" rel="noopener">在地图中打开 ↗</a>
+      </div>
+      <div class="loc-info">
+        <div><dt>公司地址</dt><dd>四川省成都市龙泉驿区柏合镇合纵路 266 号 成航大厦 2 楼</dd></div>
+        <div><dt>邮政编码</dt><dd>610100</dd></div>
+        <div><dt>联系电话</dt><dd>150 3084 2816（王天一）</dd></div>
+        <div><dt>工作时间</dt><dd>周一至周六 9:00 — 18:00</dd></div>
+        <div><dt>商务邮箱</dt><dd>business@yuhuolingkong.com</dd></div>
+        <div><dt>微信咨询</dt><dd>扫码添加（见下方二维码）</dd></div>
+      </div>
+    </div>
     <div class="cgrid">
-      <div class="cinfo rv">
-        <div class="row"><div class="k">服务热线</div><div class="v" style="color:var(--red);font-size:20px">150 3084 2816<span>王天一 · 工作日 9:00 — 18:00</span></div></div>
-        <div class="row"><div class="k">商务邮箱</div><div class="v">business@yuhuolingkong.com<span>方案、报价与资料索取</span></div></div>
-        <div class="row"><div class="k">公司地址</div><div class="v">四川省成都市龙泉驿区柏合镇合纵路 266 号<span>成航大厦 2 楼开放办公 B2-1</span></div></div>
-        <div class="row"><div class="k">来访预约</div><div class="v">可预约参观样机与试飞<span>请提前两个工作日联系</span></div></div>
-        <div class="wx">
+      <div class="rv">
+        <div class="wx" style="margin-top:0">
           <img src="assets/wechat-qr.png" alt="微信咨询二维码">
           <div><b>微信咨询</b><span>扫码添加王天一<br>备注「单位 + 场景」，对接更快</span></div>
+        </div>
+        <div class="visit">
+          <b>来访预约</b>
+          <p>可预约参观样机与试飞，请提前两个工作日联系。<br>办公地点：成航大厦 2 楼开放办公 B2-1。</p>
         </div>
       </div>
 
